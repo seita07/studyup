@@ -1,1 +1,5 @@
 <h1>ユーザーID：<%= @user.id %>,<%= @user.name %>の詳細ページ</h1>
+<% if user_signed_in? %>
+  <%= render "relationships/follow_button", user: @user %>
+<% end %>
+<%= @following_users.count %>フォロー,<%= @follower_users.count %>フォロワー

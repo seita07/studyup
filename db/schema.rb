@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_181530) do
+ActiveRecord::Schema.define(version: 2021_06_02_185027) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 2021_06_02_181530) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["timepost_id"], name: "index_comments_on_timepost_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "follow_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follow_id"], name: "index_relationships_on_follow_id"
+    t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "time_likes", force: :cascade do |t|
@@ -64,6 +74,8 @@ ActiveRecord::Schema.define(version: 2021_06_02_181530) do
 
   add_foreign_key "comments", "timeposts"
   add_foreign_key "comments", "users"
+  add_foreign_key "relationships", "users"
+  add_foreign_key "relationships", "users", column: "follow_id"
   add_foreign_key "time_likes", "timeposts"
   add_foreign_key "time_likes", "users"
 end
