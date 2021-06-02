@@ -1,0 +1,10 @@
+<h1>トップページです</h1>
+<% @users.each do |user|%>
+    <small>
+    <p>名前：<%= user.name%></p>
+    <p>職業：<%= user.occupation%></p>
+    <p>目標大学：<%= user.target_school%></p>
+    <p>ひとこと：<%= user.comment%></p>
+    <p>--------------------------------</p>
+    </small>
+<% end %>
