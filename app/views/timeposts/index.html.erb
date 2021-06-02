@@ -1,0 +1,23 @@
+<h1>勉強時間投稿一覧</h1>
+
+<ul>
+  <% @timeposts.each do |timepost| %>
+    <li>
+    <p><strong>ユーザー名:</strong><%= link_to "#{timepost.user.name}", "/users/#{timepost.user_id}" %></p>
+    <p><strong>投稿内容:</strong><%= timepost.content%>  勉強時間:<%= timepost.total_time%>分</p>
+    <p><strong>科目:</strong><%= timepost.subjects %></p>
+    <p><strong>作成日付:</strong><%= timepost.datetime.strftime('%Y-%m-%d')%></p>
+    <small>
+     <%= time_ago_in_words(timepost.created_at) %>前
+     <% if current_user %>
+      <% if timepost.user.id ==  current_user.id %>
+          <span><%= link_to "投稿編集",  "/timeposts/#{timepost.id}/edit" %></span>
+          <span><%= link_to "投稿削除", "/timeposts/#{timepost.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %></span>
+      <% end %>
+     <% end %>
+    </small>
+    </small>
+    <p>__________________________________</p>
+    </li>
+  <% end %>
+</ul>
