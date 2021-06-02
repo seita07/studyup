@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_172620) do
+ActiveRecord::Schema.define(version: 2021_06_02_175613) do
+
+  create_table "time_likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "timepost_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["timepost_id"], name: "index_time_likes_on_timepost_id"
+    t.index ["user_id"], name: "index_time_likes_on_user_id"
+  end
 
   create_table "timeposts", force: :cascade do |t|
     t.integer "user_id"
@@ -43,4 +52,6 @@ ActiveRecord::Schema.define(version: 2021_06_02_172620) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "time_likes", "timeposts"
+  add_foreign_key "time_likes", "users"
 end

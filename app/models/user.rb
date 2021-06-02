@@ -3,6 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 validates :name, presence: true, length: { maximum: 50 }
 has_many :timeposts, dependent: :destroy
+has_many :time_likes, dependent: :destroy
 
 
   def update_without_current_password(params, *options)
