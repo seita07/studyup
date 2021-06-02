@@ -16,7 +16,17 @@
       <% end %>
      <% end %>
     </small>
+
     <%= render "time_likes/like_button" ,timepost: timepost%>
+
+    <%= render "comments/comment_form" ,timepost: timepost%>
+
+    <%= render "comments/comment_list" ,timepost: timepost%>
+    </small>
+    <small>
+    <% @comment_count = Comment.where(timepost_id: timepost.id).count %>
+    コメント数<%= @comment_count %>
+    </small>
     <p>__________________________________</p>
     </li>
   <% end %>

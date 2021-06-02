@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   }
   resources :users
   resources :timeposts do
+    resources :comments, only: %i[create destroy]
     resources :time_likes, only: %i[create destroy]
   end
   root 'users#top'
