@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  mount_uploader :image, ImageUploader
 validates :name, presence: true, length: { maximum: 50 }
 has_many :timeposts, dependent: :destroy
 has_many :time_likes, dependent: :destroy
