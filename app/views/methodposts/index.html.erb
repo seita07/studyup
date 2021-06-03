@@ -10,6 +10,7 @@
     <p><strong>タイトル:</strong><%= methodpost.title%></p>
     <p><strong>投稿内容:</strong><%= link_to "#{methodpost.content}", methodpost %>投稿ID:<%= methodpost.id%></p>
     <p><strong>投稿科目:</strong><%= methodpost.subjects%></p>
+    <%= render "methodlike/like_button" ,methodpost: methodpost%>
     </li>
 
   <% end %>
