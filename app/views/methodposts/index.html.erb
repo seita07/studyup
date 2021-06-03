@@ -1,0 +1,17 @@
+<h1>勉強法投稿一覧</h1>
+<p><%= link_to "勉強法投稿新規作成", new_methodpost_path %></p>
+<ul>
+  <% @methodposts.each do |methodpost| %>
+    <li>
+    <small>
+     <%= time_ago_in_words(methodpost.created_at) %>前
+    </small>
+    <p><strong>ユーザー名:</strong><%= link_to "#{methodpost.user.name}", "/users/#{methodpost.user_id}" %> ID:<%= methodpost.user_id%></p>
+    <p><strong>タイトル:</strong><%= methodpost.title%></p>
+    <p><strong>投稿内容:</strong><%= link_to "#{methodpost.content}", methodpost %>投稿ID:<%= methodpost.id%></p>
+    <p><strong>投稿科目:</strong><%= methodpost.subjects%></p>
+    </li>
+
+  <% end %>
+
+</ul>

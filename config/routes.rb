@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create destroy]
     resources :time_likes, only: %i[create destroy]
   end
+  resources :methodposts 
   resources :relationships, only: %i[create destroy]
   root 'users#top'
 end

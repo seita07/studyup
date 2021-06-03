@@ -1,0 +1,10 @@
+<h1>勉強法投稿詳細ページ</h1>
+<% if current_user %>
+<% if @methodpost.user.id ==  current_user.id %>
+    <h4><%= link_to "投稿編集", edit_methodpost_path %></h4>
+    <h4><%= button_to "投稿削除", "/methodposts/#{@methodpost.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %></h4>
+<% end %>
+<% end %>
+<p><%= @methodpost.title %></p>
+<p><%= @methodpost.content %></p>
+<p><%= @methodpost.subjects %></p>
