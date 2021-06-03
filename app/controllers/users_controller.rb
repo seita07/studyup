@@ -9,11 +9,11 @@ class UsersController < ApplicationController
       @following_users = @user.followings
       @follower_users = @user.followers
       @timeposts = Timepost.where(user_id: params[:id])
-    #   gon.day = get_day
-    #   gon.study_time = get_eachsubject_weekly_totaltime
-    #   @day_totaltime = dayly_total_studytime
-    #   @weel_totaltime = weekly_total_studytime
-    #   @month_totaltime = month_total_studytime
+      gon.day = "05-12"
+      gon.study_time = get_eachsubject_weekly_totaltime
+      @day_totaltime = dayly_total_studytime
+      @weel_totaltime = weekly_total_studytime
+      @month_totaltime = month_total_studytime
     end
   
     def guest_sign_in
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
           today_studytime_posts = Timepost.where(datetime: search_date.in_time_zone.all_day).where(subjects: subject).where(user_id: params[:id])
           if !today_studytime_posts.empty?
             today_studytime_posts.each do |today_studytime_post|
-              day_study_time_list.push(today_studytime_post.studytime)
+              day_study_time_list.push(today_studytime_post.total_time)
             end
           else
             day_study_time_list.push(0)
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
       SUBJECT_LIST.each do |subject|
         today_studytime_posts = Timepost.where(datetime: Date.today.in_time_zone.all_day).where(subjects: subject).where(user_id: params[:id])
         today_studytime_posts.each do |post|
-          dayly_posts.push(post.studytime)
+          dayly_posts.push(post.total_time)
           subjects_dayly_totaltime_list.push(dayly_posts.sum)
         end
       end
@@ -79,7 +79,7 @@ class UsersController < ApplicationController
       from = today - 6.day
       studytime_posts = Timepost.where(datetime: from...today).where(user_id: params[:id])
       studytime_posts.each do |post|
-        weekly_totaltime_list.push(post.studytime)
+        weekly_totaltime_list.push(post.total_time)
       end
       weekly_totaltime_list.sum
     end
@@ -90,7 +90,7 @@ class UsersController < ApplicationController
       from = today - 30.day
       studytime_posts = Timepost.where(datetime: from...today).where(user_id: params[:id])
       studytime_posts.each do |post|
-        month_totaltime_list.push(post.studytime)
+        month_totaltime_list.push(post.total_time)
       end
       month_totaltime_list.sum
     end

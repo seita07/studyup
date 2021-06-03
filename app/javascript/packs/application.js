@@ -8,8 +8,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "tabs"
+import "chart.js"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-s
