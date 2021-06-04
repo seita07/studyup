@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   resources :methodposts do
     resources :methodlike, only: %i[create destroy]
+    resources :reviews, only: %i[create destroy]
   end
   resources :relationships, only: %i[create destroy]
   root 'users#top'

@@ -6,8 +6,9 @@ class MethodpostsController < ApplicationController
   
     def show
       @methodpost = Methodpost.find_by(id: params[:id])
-    #   @methodlikes_count = MethodLike.where(methodpost_id: params[:id]).count
-    #   @reviews = Review.where(methodpost_id: params[:id])
+      @methodlikes_count = MethodLike.where(methodpost_id: params[:id]).count
+      @review = Review.new
+      @reviews = Review.where(methodpost_id: params[:id])
     end
   
     def new
