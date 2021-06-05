@@ -4,6 +4,8 @@
 <% if user_signed_in? %>
   <%= render "relationships/follow_button", user: @user %>
 <% end %>
+<%@following_users = @user.followings%> 
+<%@follower_users = @user.followers%>
 <%= @following_users.count %>フォロー,<%= @follower_users.count %>フォロワー
 <div class="tab-area">
   <div class="tab active">

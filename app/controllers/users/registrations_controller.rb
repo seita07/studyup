@@ -1,6 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-    # before_action :configure_account_update_params, only: [:update]
-    # before_action :ensure_normal_user, only: %i[update destroy]
+    before_action :configure_account_update_params, only: [:update]
   
     protected
 
@@ -12,9 +11,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       devise_parameter_sanitizer.permit(:account_update, keys: [:name,:occupation,:target_school,:comment,:image])
     end
 
-    # def ensure_normal_user
-    #   if resource.email == 'guest@example.com'
-    #     redirect_to root_path, alert: 'ゲストユーザーの更新・削除はできません。'
-    #   end
-    # end
+    def after_inactive_sign_up_path_for(resource)
+      redirect_to root_path
+    end
+    
+    def after_inactive_sign_update_path_for(resource)
+      redirect_to root_path
+    end
 end

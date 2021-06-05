@@ -28,9 +28,6 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
 
-
-
-
     def update_without_current_password(params, *options)
       params.delete(:current_password)
 

@@ -1,13 +1,11 @@
 class UsersController < ApplicationController
-    # before_action :authenticate_user!, only: [:show]
+    before_action :authenticate_user!, only: [:show]
     def top
         @users = User.all
     end
   
     def show
       @user = User.find_by(id: params[:id])
-      @following_users = @user.followings
-      @follower_users = @user.followers
       @timeposts = Timepost.where(user_id: params[:id])
       gon.day = "05-12"
       gon.study_time = get_eachsubject_weekly_totaltime

@@ -19,11 +19,12 @@
   <% if user_signed_in? %> 
     <h2> 現在 <%= current_user.name %> さんがログインしています </h2> <!-- ここを追加します -->
     <h4> メールアドレス： <%= current_user.email %> </h4>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
+    <%= button_to "ログアウト", destroy_user_session_path, method: :delete %> 
     <%= link_to "基本情報編集", edit_user_registration_path %> 
     <%= link_to "タイムライン", timeposts_path %>
     <%= link_to "記録", new_timepost_path %>
     <%= link_to "おすすめ勉強方法", methodposts_path %>
+    <%= link_to "トップページ", root_path %>
   <% else %>
     <!-- ユーザーがログインしていなかった時の処理 -->
     <h2> 現在ログインしていません </h2>
@@ -32,6 +33,7 @@
       <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
       <%= link_to "タイムライン", timeposts_path %>
       <%= link_to "おすすめ勉強法", methodposts_path %>
+      <%= link_to "トップページ", root_path %>
   <% end %>
   </header>
     <%= yield %>
