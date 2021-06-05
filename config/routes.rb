@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  root 'users#top'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+  devise_scope :user do
+    get '/users/guest_sign_in', to: 'users#guest_sign_in'
+  end
   resources :users
   resources :timeposts do
     resources :comments, only: %i[create destroy]
@@ -9,8 +13,7 @@ Rails.application.routes.draw do
   end
   resources :methodposts do
     resources :methodlike, only: %i[create destroy]
-    resources :reviews, only: %i[create destroy]
+    resources :methodlike, only: %i[create destroy]
   end
   resources :relationships, only: %i[create destroy]
-  root 'users#top'
 end

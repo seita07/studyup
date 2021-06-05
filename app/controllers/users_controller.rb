@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authenticate_user!, only: [:show]
+    # before_action :authenticate_user!, only: [:show]
     def top
         @users = User.all
     end
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       sign_in user
       redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
     end
-  
+
     def get_day
       today = Time.current
       week_list = []
