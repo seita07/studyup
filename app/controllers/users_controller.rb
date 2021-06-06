@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    before_action :authenticate_user!, only: [:show]
     def top
         @users = User.all
     end
@@ -7,7 +6,7 @@ class UsersController < ApplicationController
     def show
       @user = User.find_by(id: params[:id])
       @timeposts = Timepost.where(user_id: params[:id])
-      gon.day = "05-12"
+      gon.day = get_day
       gon.study_time = get_eachsubject_weekly_totaltime
       @day_totaltime = dayly_total_studytime
       @weel_totaltime = weekly_total_studytime

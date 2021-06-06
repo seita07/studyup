@@ -13,3 +13,105 @@
  *= require_tree .
  *= require_self
  */
+ body {
+	padding: 0;
+	margin: 0;
+}
+img{
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+	height: auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	line-height: 1;
+}
+
+.cl {
+	clear: both;
+}
+a {  
+  color: inherit;
+}
+a:hover {
+      opacity:0.7;
+      filter: alpha(opacity=70);
+      -ms-filter: "alpha( opacity=70 )";
+      -webkit-transition: 0.3s ease-in-out;
+      -moz-transition: 0.3s ease-in-out;
+      -o-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
+}
+
+header {
+     background-color: #222831;
+     color: aliceblue;
+     padding: 16px 6.15%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+     a {
+        text-decoration: none;
+        color: aliceblue;
+     }
+     .user_icon {
+         width: 48px;
+     }
+     .header_left {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        li {
+            margin-right: 16px;
+            font-size: 14px;
+        }
+        #logo{
+            font-size: 32px;
+            margin-right: 100px;
+        }
+     }
+     .header_right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .dropdown {
+            margin-left: 16px;
+        }
+        #button_ul{
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+            font-size: 14px;
+            li {
+                background-color: #29bb89;
+                padding: 8px 24px;
+                border-radius: 8px;
+                margin-right: 16px;
+            }
+            li:nth-of-type(1){
+                background-color: #f14668;
+            }
+        }
+     }
+ }
+ .icon_image {
+    width: 200px;
+    height: 200px;
+    //サイズ指定
+    border-radius: 100px;
+    //画像を丸くする
+    object-fit: cover;
+    //タテヨコ比を変えないままトリミング
+  }
