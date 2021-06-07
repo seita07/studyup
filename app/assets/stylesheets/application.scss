@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
- body {
+ @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+body {
 	padding: 0;
 	margin: 0;
 }
@@ -52,12 +53,15 @@ a:hover {
 }
 
 header {
+    font-family: 'Noto Sans JP', sans-serif;
      background-color: #222831;
      color: aliceblue;
-     padding: 16px 6.15%;
+     font-weight: 500;
+     padding: 16px 4.61%;
      display: flex;
      justify-content: space-between;
      align-items: center;
+     letter-spacing: 0.2em;
 
      a {
         text-decoration: none;
@@ -109,9 +113,26 @@ header {
  .icon_image {
     width: 200px;
     height: 200px;
-    //サイズ指定
     border-radius: 100px;
-    //画像を丸くする
     object-fit: cover;
-    //タテヨコ比を変えないままトリミング
   }
+.like_button {
+    background-color: #ffffff;
+    border: none;
+}
+.like_button:focus {
+    outline: 0;
+}
+.unlike_button {
+    background-color: #ffffff;
+    border: none;
+}
+.unlike_button:focus {
+    outline: 0;
+}
+.like-btn-unlike {
+    color: #ff2581;
+}
+.like-btn {
+    color: #8f8f8f;
+}

@@ -17,16 +17,18 @@
     <script src="https://kit.fontawesome.com/db9677780e.js" crossorigin="anonymous"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js" integrity="sha512-VMsZqo0ar06BMtg0tPsdgRADvl0kDHpTbugCBBrL55KmucH6hP9zWdLIWY//OTfMnzz6xWQRxQqsUFefwHuHyg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
-
   <body>
   <header>
-  <% if user_signed_in? %> 
-    <%= render "layouts/header_in" %>
-  <% else %>
-    <%= render "layouts/header_out" %>
-  <% end %>
+    <% if user_signed_in? %> 
+      <%= render "layouts/header_in" %>
+    <% else %>
+      <%= render "layouts/header_out" %>
+    <% end %>
   </header>
+  <div class="container_box">
     <%= yield %>
+  </div>
+  
   </body>
 </html>
 

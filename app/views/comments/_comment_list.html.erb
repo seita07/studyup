@@ -1,14 +1,25 @@
-<h2>コメント一覧</h2>
+<div class="comment_list">
     <% @comments = Comment.where(timepost_id: timepost.id)%>
     <% @comments.each do |comment|%>
-    <p>コメントしたユーザー名:<%= link_to "#{comment.user.name}", "/users/#{comment.user.id}" %></p>
-    <p><%= comment.text %></p>
-    <small>
-     <%= time_ago_in_words(comment.created_at) %>前
-    </small>
-    <% if user_signed_in? %>
-    <%if current_user.id == comment.user.id %>
-       <%= button_to "コメント削除", "/timeposts/#{timepost.id}/comments/#{comment.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %>
+    <div class="comment_each_box">
+      <div class="comment_user_box">
+         <% if timepost.user.image? %>
+            <%= link_to "/users/#{timepost.user_id}" do %>
+              <%= image_tag @user.image.url,class: "comment_user" %>
+            <% end %>
+          <% else %>
+            <%= link_to "/users/#{timepost.user_id}" do %>
+              <%= image_tag '/default.png' ,class:"comment_user"%>
+            <% end %>
+          <% end %>
+          <p><%= timepost.user.name%></p>
+          <span><%= time_ago_in_words(comment.created_at) %>前</span>
+      </div>
+      <div class="comment_content">
+         <p><%= comment.text %></p>
+      </div>
+    </div>
     <% end %>
-    <% end %>
-    <% end %>
+     <%= render "comments/comment_form" ,timepost: timepost%>
+</div>
+

@@ -1,7 +1,6 @@
 <% if user_signed_in? %>
-<h2>コメントする</h2>
 <%= form_with(model:[timepost, Comment.new]) do |form| %>
-    <%= form.text_field :text %>
-    <%= form.submit %>
+    <%= form.text_area :text ,:class => 'comment_area'%>
+    <%= form.submit "コメントする" ,:class => 'comment_submit'%>
 <% end %>
 <% end %>
