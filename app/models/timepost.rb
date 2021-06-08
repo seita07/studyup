@@ -8,5 +8,6 @@ class Timepost < ApplicationRecord
   validates :minitus, presence: true
   validates :datetime, presence: true
   validates :subjects, presence: true
+  validates :img, presence: true
   validates :content, length: { maximum: 140 }
 end

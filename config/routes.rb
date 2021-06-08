@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get '/users/guest_sign_in', to: 'users#guest_sign_in'
   end
   resources :users
+  resources :books
   resources :timeposts do
     resources :comments, only: %i[create destroy]
     resources :time_likes, only: %i[create destroy]

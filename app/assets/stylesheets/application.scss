@@ -198,6 +198,21 @@ footer {
             }
         }
         .sign_submit {
+            background-color: #fb9300;
+            border: none;
+            color: #ffffff;
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            padding: 16px;
+            text-shadow:1px 1px 0px rgba(0,0,0,.1);
+            box-shadow:0px 5px 0px #b56a01;
+            font-weight: 400;
+        }
+        .sign_submit:focus {
+            outline: none;
+        }
+        .login_submit {
             background-color: #f14668;
             border: none;
             color: #ffffff;
@@ -209,7 +224,7 @@ footer {
             box-shadow:0px 5px 0px #c1524e;
             font-weight: 400;
         }
-        .sign_submit:focus {
+        .login_submit:focus {
             outline: none;
         }
         .login_guest {
@@ -226,6 +241,12 @@ footer {
             text-align: center;
             text-decoration: none;
             font-weight: 400;
+        }
+        .remember_box {
+            margin-bottom: 16px;
+            .check_box_text {
+                font-size: 14px;
+            }
         }
     }
 }

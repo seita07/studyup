@@ -1,0 +1,16 @@
+<% if @books.present? %>
+  <% @books.each do |book| %>
+    <div class="list">
+      <p><%= book.name %></p>
+      <%= image_tag book["mediumImageUrls"][0] %>
+
+      <%= form_with(model: Book.new, local: true) do |f| %>
+        <%= f.hidden_field :title, :value => book.name%>
+        <%= f.hidden_field :img_url, :value => book["mediumImageUrls"][0] %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.submit "登録", class: "study_submit" %>
+      <% end %>
+      <p>______________________</p>
+    </div>
+  <% end %>
+<% end %>

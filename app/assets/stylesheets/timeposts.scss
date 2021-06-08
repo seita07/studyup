@@ -1,6 +1,97 @@
 // Place all the styles related to the timeposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.timepost_content {
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 4.61% 16%;
+    background-color: #bce6eb; 
+    .timepost_container {
+        background-color: #ffffff;
+        padding: 8.46% 8.46%;
+        border-radius: 16px;
+        box-shadow:15px 15px 0px rgba(0,0,0,.1);
+        border: 1px solid #dcdcdc;
+    }
+    .timepost_form_each {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 32px 0;
+        i {
+            margin-right: 16px;
+        }
+        span {
+            font-size: 22px;
+            font-weight: 600;
+            margin-right: 30%;
+        }
+        #timepost_subjects {
+            margin-left: auto;
+            padding: 8px;
+        }
+        .datetime_box {
+            margin-left: auto;
+            select {
+                padding: 8px;
+            }
+        }
+        .studytime_box {
+            margin-left: auto;
+            select {
+                padding: 8px;
+                margin-right: 8px;
+                margin-left: 4px;
+            }
+        }
+        .timepost_textarea {
+            display: block;
+            width: 100%;
+            margin-top: 24px;
+            min-height: 200px;
+            padding: 16px;
+            font-size: 20px;
+        }
+        select {
+            font-size: 18px;
+        }
+        .book_list {
+            background-color: #8f8f8f;
+            display: block;
+            width: 100%;
+            list-style-type: none;
+            margin-top: 24px;
+            padding: 0;
+            margin: 16px 0;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            li {
+                margin-bottom: 16px;
+                width: 10%;
+                margin: 0 2%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .study_submit {
+        display: block;
+        margin-left: auto;
+        background-color: #29bb89;
+        color: #ffffff;
+        border: none;
+        padding: 8px 24px;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .study_submit:focus {
+        outline: 0;
+    }
+}
+
+//タイムラインページ
 .timeline_content {
     padding: 4.61%;
     background-color: #fff5eb;
@@ -17,6 +108,7 @@
     background-color: #ffffff;
     padding: 4.61% 8.46%;
     border-radius: 16px;
+    border: 1px solid #dcdcdc;
     ul {
         padding: 0;
         margin: 0;

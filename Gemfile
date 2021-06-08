@@ -24,6 +24,7 @@ gem 'gon', '~> 6.2.0'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'bootstrap', '~> 5.0.0.alpha1'
+gem 'rakuten_web_service'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

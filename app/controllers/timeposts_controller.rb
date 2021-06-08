@@ -1,5 +1,5 @@
 class TimepostsController < ApplicationController
-    before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
 
   def index
     @timeposts = Timepost.all.order(created_at: :desc)
@@ -7,6 +7,7 @@ class TimepostsController < ApplicationController
 
   def new
     @timepost = Timepost.new
+    @books = Book.all
   end
 
   def create
@@ -40,9 +41,14 @@ class TimepostsController < ApplicationController
     redirect_to timeposts_url
   end
 
+  def search_rakuten_api
+    items = RakutenWebService::Ichiba::Item.search(keyword: "英語")
+    return @items = items
+  end
+
   private
 
   def timepost_params
-    params.require(:timepost).permit(:content, :datetime, :total_time, :subjects, :time, :minitus, :user_id, :image)
+    params.require(:timepost).permit(:content, :datetime, :total_time, :subjects, :time, :minitus, :user_id, :img)
   end
 end
