@@ -46,6 +46,7 @@
             h2 {
               font-size: 24px;
               line-height: 1.5em;
+              font-weight: 600;
               a {
                 text-decoration: none;
                 color: #333;
@@ -91,13 +92,96 @@
               }
               a {
                 text-decoration: none;
-                color: #000000;
+                color: #333;
               }
             }
           }
         }
       }
   }
+}
+
+//詳細ページ
+.methodpost_detail_content {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #333;
+    padding: 4.61%;
+    background-color: #faf1e6; 
+    .methodpost_detail_box {
+        background-color: #ffffff;
+        padding: 6.15% 8.46%;
+        border-radius: 16px;
+        // box-shadow:15px 15px 0px rgba(0,0,0,.1);
+        // border: 1px solid #dcdcdc;
+        display: flex;
+    }
+    .methodpost_detail_container_left {
+      width: 100%;
+      padding-right: 64px;
+        h2 {
+          font-size: 32px;
+          font-weight: 600;
+          line-height: 1.5em;
+        }
+        .detail_text {
+          font-size: 16px;
+          line-height: 1.7em;
+          margin-top: 32px;
+          font-weight: 500;
+          letter-spacing: 0.1em;
+        }
+        h3 {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 1.5em;
+          margin-top: 64px;
+        }
+    }
+    .methodpost_detail_container_right  {
+      width: 400px;
+      // background-color: #F3F6F9;
+      // border-radius: 16px;
+      border-left: rgb(126, 124, 124) solid 1px;
+      padding: 64px 32px;
+      // #E4E6EF
+      .detail_user_box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .methodpost_user {
+          width: 40px;
+          height: 40px;
+          border-radius: 100px;
+          object-fit: cover; 
+        }
+        .user_name {
+          margin:0  16px 0 8px;
+          a {
+            text-decoration: none;
+            color: #333; 
+          }
+        }
+        .created{
+          font-size: 12px;
+          color: #8f8f8f;
+        }
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        color: #3F4254;
+        li{
+          span {
+            
+          }
+          .fa-clock {
+            color: #FFA800;
+          }
+
+        }
+      }
+    }
 }
 
 //レビューページ
@@ -130,16 +214,65 @@
     padding-top: 12px;
   }
 }
-.rating-box .ratings .fa{
-  font-size: 30px;
-  color:#ffcc00;
-  cursor: pointer;
-}
+.rating-box {
+  margin-top: 32px;
+  .ratings .fa {
+    font-size: 30px;
+    color:#ffcc00;
+    cursor: pointer;
+  }
+  .textarea {
+    width: 100%;
+    margin: 16px 0;
+    height: 100px;
+  }
+  .button {
+    background-color: #fb9300;
+    border: none;
+    color: #ffffff;
+    width: 160px;
+    display: block;
+    border-radius: 8px;
+    padding: 8px;
+    text-shadow:1px 1px 0px rgba(0,0,0,.1);
+    box-shadow:0px 3px 0px #b56a01;
+    font-weight: 400;
+    margin-left: auto;
+    font-size: 16px;
+  }
+  .button:focus {
+    outline: none;
+  }
+} 
 
 .main-rating {
   display: flex;
 }
 
 .rating-value-display {
-  font-size: 20px;
+  font-size: 14px;
+  margin-left: 16px;
+}
+
+.review_box {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    padding: 16px 8px;
+    border-bottom: #0a1931 1px solid;
+    .review_head {
+      display: flex;
+      .review_user_p {
+        padding-top: 8px;
+        margin-right: 16px;
+      }
+      .review_user {
+        width: 24px;
+        height: 24px;
+        border-radius: 100px;
+        object-fit: cover; 
+      }
+    }
+  }
 }

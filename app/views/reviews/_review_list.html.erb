@@ -1,37 +1,27 @@
-<section class="section mt-6">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-5">
-        <div class="card mb-6">
-          <div class="card-content">
-            <div class="content average-score">
-              <div class="star-rating mb-2">
-                <div class="star-rating-front" style="width: <%= @methodpost.review_score_percentage %>%">★★★★★</div>
-                <div class="star-rating-back">★★★★★</div>
-              </div>
-              <div class="average-score-display ml-3 pt-2">
-                <%= @methodpost.avg_score %>点（<%= @methodpost.reviews.count %>件のレビュー）
-              </div>
-            </div>
-          </div>
+<ul class="review_box">
+  <% @reviews.each do |review|%>
+    <li>
+    <div class="review_head">
+      <p class="review_user_p">
+      <% if review.user.image? %>
+        <%= link_to "/users/#{review.user_id}" do %>
+        <%= image_tag @user.image.url,class: "review_user" %>
+        <% end %>
+      <% else %>
+        <%= link_to "/users/#{review.user_id}" do %>
+          <%= image_tag '/default.png' ,class:"review_user"%>
+        <% end %>
+      <% end %>
+      <%= review.user.name %>
+      </p>
+      <div class="average-score">
+        <div class="star-rating">
+          <div class="star-rating-front" style="width: <%= review.get_review_score %>%">★★★★★</div>
+          <div class="star-rating-back">★★★★★</div>
         </div>
-        <table class="table is-fullwidth has-text-centered">
-          <thead>
-            <tr>
-              <th>ユーザー</th><th>点数</th><th>内容</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @reviews.each do |review| %>
-              <tr>
-                <td><%= review.user.name %></td>
-                <td><%= review.evaluation %></td>
-                <td><%= review.text %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
       </div>
     </div>
-  </div>
-</section>
+    <p class="review_text"><%= review.text %></p>
+    </li>
+  <% end %>
+</ul>

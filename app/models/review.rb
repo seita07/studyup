@@ -11,5 +11,9 @@ class Review < ApplicationRecord
     def user
       User.find_by(id: user_id)
     end
+
+    def get_review_score
+      self.evaluation.to_f*20
   end
+end
   

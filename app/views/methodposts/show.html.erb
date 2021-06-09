@@ -1,13 +1,38 @@
 <%= javascript_pack_tag 'application' %>
-
-<h1>勉強法投稿詳細ページ</h1>
-<% if current_user %>
-<% if @methodpost.user.id ==  current_user.id %>
-    <h4><%= link_to "投稿編集", edit_methodpost_path %></h4>
-    <h4><%= button_to "投稿削除", "/methodposts/#{@methodpost.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %></h4>
-<% end %>
-<% end %>
-<p><%= @methodpost.content %></p>
+<div class="methodpost_detail_content">
+<div class="methodpost_detail_box">
+  <div class="methodpost_detail_container_left">
+    <h2><%= @methodpost.title %></h2>
+    <p class="detail_text"><%= @methodpost.content %></p>
+      <h3>レビュー一覧</h3>
+      <%= render "reviews/review_list" %>
+      <%= render "reviews/review_form" , review: @review, methodpost: @methodpost%>
+  </div>
+  <div class="methodpost_detail_container_right">
+    <p class="detail_user_box">
+      <% if @methodpost.user.image? %>
+        <%= link_to "/users/#{methodpost.user_id}" do %>
+        <%= image_tag @user.image.url,class: "methodpost_user" %>
+        <% end %>
+      <% else %>
+        <%= link_to "/users/#{@methodpost.user_id}" do %>
+          <%= image_tag '/default.png' ,class:"methodpost_user"%>
+        <% end %>
+      <% end %>
+      <span class="user_name"><%= link_to "#{@methodpost.user.name}", "/users/#{@methodpost.user_id}" %></span>
+    </p>
+    <ul>
+      <li>
+        <span><i class="fas fa-clock fa-lg"></i>作成日</span>
+        <p>作成日 <%= @methodpost.created_at.strftime('%Y-%m-%d')%></p>
+      </li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  </div>
+</div>
+<p></p>
 <p><%= @methodpost.subjects %></p>
 <% if user_signed_in? %>
       <% @methodlikes_count = MethodLike.where(methodpost_id: @methodpost.id).count %>
@@ -21,8 +46,4 @@
           <% end %>
       <% end %>
 <% end %>
-
-<h2>レビューする</h2>
-<%= render "reviews/review_form" , review: @review, methodpost: @methodpost%>
-<h2>レビュー一覧</h2
-<%= render "reviews/review_list" %>
+    <span class="created">作成日 <%= @methodpost.created_at.strftime('%Y-%m-%d')%></span>
