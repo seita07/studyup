@@ -1,18 +1,49 @@
-<h1>勉強法投稿一覧</h1>
+<div class="methodpost_content">
+  <div class="methodpost_container">
+    <div class="methodpost_bar">
+      <p><i class="fas fa-user-graduate fa-3x"></i></p>
+    </div>
+    <div class="methodpost_box">
+      <ul>
+        <% @methodposts.each do |methodpost| %>
+          <li>
+          <h2><%= link_to "#{methodpost.title}", "/methodposts/#{methodpost.id}" %></h2>
+            <div class="methodpost_reviewcontent">
+            <div class="tag_box">
+              <span><%= methodpost.subjects%></span>
+            </div>
+              <div class="average-score">
+                <div class="star-rating">
+                  <div class="star-rating-front" style="width: <%= methodpost.review_score_percentage %>%">★★★★★</div>
+                  <div class="star-rating-back">★★★★★</div>
+                </div>
+                <div class="average-score-display">
+                  <p><%= methodpost.avg_score %>点（<%= methodpost.reviews.count %>件のレビュー）</p>
+                </div>
+              </div>
+              <div class="methodpost_likebox">
+                <%= render "methodlike/like_button" ,methodpost: methodpost%>
+              </div>
+            </div>
+            <div class="methodpost_uer_box">
+            <p>
+              <% if methodpost.user.image? %>
+                <%= link_to "/users/#{methodpost.user_id}" do %>
+                  <%= image_tag @user.image.url,class: "methodpost_user" %>
+                <% end %>
+              <% else %>
+                <%= link_to "/users/#{methodpost.user_id}" do %>
+                  <%= image_tag '/default.png' ,class:"methodpost_user"%>
+                <% end %>
+              <% end %>
+            <%= link_to "#{methodpost.user.name}", "/users/#{methodpost.user_id}" %>
+            </p>
+            <p class="created">作成日 <%= methodpost.created_at.strftime('%Y-%m-%d')%></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
 <p><%= link_to "勉強法投稿新規作成", new_methodpost_path %></p>
-<ul>
-  <% @methodposts.each do |methodpost| %>
-    <li>
-    <small>
-     <%= time_ago_in_words(methodpost.created_at) %>前
-    </small>
-    <p><strong>ユーザー名:</strong><%= link_to "#{methodpost.user.name}", "/users/#{methodpost.user_id}" %> ID:<%= methodpost.user_id%></p>
-    <p><strong>タイトル:</strong><%= methodpost.title%></p>
-    <p><strong>投稿内容:</strong><%= link_to "#{methodpost.content}", methodpost %>投稿ID:<%= methodpost.id%></p>
-    <p><strong>投稿科目:</strong><%= methodpost.subjects%></p>
-    <%= render "methodlike/like_button" ,methodpost: methodpost%>
-    </li>
-
-  <% end %>
-
-</ul>

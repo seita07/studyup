@@ -47,7 +47,7 @@ class MethodpostsController < ApplicationController
     private
   
     def methodpost_params
-      params.require(:methodpost).permit(:content, :user_id, :subjects,:title)
+      params.require("methodpost").permit(:content, :user_id, :subjects,:title)
     end
   end
   

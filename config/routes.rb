@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :time_likes, only: %i[create destroy]
   end
   resources :methodposts do
-    resources :methodlike, only: %i[create destroy]
+    resources :reviews, only: %i[create destroy]
     resources :methodlike, only: %i[create destroy]
   end
   resources :relationships, only: %i[create destroy]

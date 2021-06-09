@@ -53,6 +53,7 @@ a:hover {
 header {
     font-family: 'Noto Sans JP', sans-serif;
      background-color: #222831;
+    // background-color: #0a1931;
      color: aliceblue;
      font-weight: 500;
      padding: 16px 4.61%;
@@ -140,7 +141,9 @@ footer {
     border-radius: 100px;
     object-fit: cover;
   }
-  //いいねボタン
+
+
+//いいねボタン
 .like_button {
     background-color: #ffffff;
     border: none;
@@ -159,6 +162,31 @@ footer {
     color: #ff2581;
 }
 .like-btn {
+    color: #8f8f8f;
+}
+//goodボタン
+.good_button {
+    background-color: #ffffff;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+.good_button:focus {
+    outline: 0;
+}
+.ungood_button {
+    background-color: #ffffff;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+.ungood_button:focus {
+    outline: 0;
+}
+.ungood-btn {
+    color: #0707ff;
+}
+.good-btn {
     color: #8f8f8f;
 }
 
