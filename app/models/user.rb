@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
   has_many :timeposts, dependent: :destroy
   has_many :time_likes, dependent: :destroy
+  has_many :like_times, through: :time_likes, source: :timepost
   has_many :methodposts, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :books, dependent: :destroy

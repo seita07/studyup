@@ -1,14 +1,24 @@
-<p>１日の合計勉強時間:<%= @day_totaltime%>分</p>
-  <p>１週間の合計勉強時間:<%= @weel_totaltime%>分</p>
-  <p>1ヶ月の合計勉強時間:<%= @month_totaltime%>分</p>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
-
+<div class="report_content">
+<table>
+    <tr>
+      <th>今日</th>
+      <th>今月</th>
+      <th>総計</th>
+    </tr>
+    <tr>
+      <td><%= @day_totaltime[0]%>時間<%= @day_totaltime[1]%>分</td>
+      <td><%= @month_totaltime%>時間</td>
+      <td><%= @totaltime%>時間</td>
+    </tr>
+</table>
 <p>
-<canvas id="myChart" width="300" height="200">お使いのブラウザはcanvasに対応していません。</canvas>
+<canvas id="myChart" width="400" height="200">お使いのブラウザはcanvasに対応していません。</canvas>
 </p>
-
-
+<p>
+<canvas id="myPieChart"></canvas>
+</p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
 <script>
   var subjects_list = ["国語","現代文","古文","漢文","数学","数学I・A","数学II・B","数学III","英語","英単語","英文法","英文解釈","英長文","リスニング",
                         "日本史","世界史","倫理","政治経済","地理","現代社会","物理","化学","生物","地学","過去問"]
@@ -173,7 +183,7 @@
       options: {
           title: {
               display: true,
-              text: '1週間の勉強時間', //グラフの見出し
+              text: '1週間の勉強時間グラフ', //グラフの見出し
               padding:3
           },
           scales: {
@@ -185,15 +195,7 @@
                     stacked: true, //積み上げ棒グラフにする設定
                     ticks: {     // 目盛り
                     min: 0,      // 最小値
-                },
-                scaleLabel: {                  // 軸ラベル
-                            display: true,                 // 表示の有無
-                            labelString: '勉強時間(分)',     // ラベル
-                            fontFamily: "sans-serif",
-                            fontColor: "black",             // 文字の色
-                            fontFamily: "sans-serif",
-                            fontSize: 16                   // フォントサイズ
-                        }
+                }
               }]
           },
           legend: {
@@ -209,8 +211,10 @@
       }
   });
 </script>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-<canvas id="myPieChart"></canvas>
   <script>
   var subjects_list = ["国語","現代文","古文","漢文","数学","数学I・A","数学II・B","数学III","英語","英単語","英文法","英文解釈","英長文","リスニング",
                         "日本史","世界史","倫理","政治経済","地理","現代社会","物理","化学","生物","地学","過去問"]
@@ -260,7 +264,7 @@
     options: {
       title: {
         display: true,
-        text: '今日の勉強時間'
+        text: '今日の勉強時間グラフ'
       },
       pieceLabel: {
         render: 'label',

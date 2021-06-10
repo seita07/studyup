@@ -25,6 +25,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'rakuten_web_service'
+gem 'acts-as-taggable-on', '~> 7.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

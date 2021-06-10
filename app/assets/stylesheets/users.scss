@@ -1,16 +1,147 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
-.tab-area {
+.user_content {
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 4.61%;
+  background-color: #fbf5e7; 
+  color:#333;
+  .user_container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    .user_detail_left {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        .user_detail_left_top {
+          background-color: #ffffff;
+          padding: 32px 24px;
+          border-radius: 8px;
+          .user_image {
+            width: 75px;
+            height: 75px;
+            border-radius: 100px;
+            object-fit: cover;
+            margin: 0 auto;
+            display: block;
+          }
+          .user_commentbox {
+            margin-top: 24px;
+            background-color: #ecf8fa;
+            border-radius: 8px;
+            padding: 16px;
+          }
+          .user_follow_box {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 18px;
+          }
+          p {
+            font-size: 16px;
+          }
+          .user_info {
+            padding: 0 10%;
+            p {
+              line-height: 2em;
+              display: flex;
+              justify-content: space-between;
+            }
+            span {
+              text-align: right;
+            }
+          }
+        }
+        .user_detail_left_under {
+          background-color: #ffffff;
+          margin-top: 32px;
+          padding: 32px 24px;
+          border-radius: 8px;
+          min-height: 100px;
+        }
+    }
+    .user_detail_right {
+        // background-color: #ffffff;
+        // padding: 4.61% ;
+        // border-radius: 8px;
+        width: 68%;
+        .report_content {
+            background-color: #ffffff;
+            padding: 4.61% ;
+            border-radius: 8px; 
+          p {
+            margin-bottom: 24px;
+          }
+          table {
+            width: 100%;
+            text-align: center;
+            border: 1px solid #222831;
+            border-radius: 8px;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #222831;
+            margin-bottom: 44px;
+            th{
+              background-color: #222831;
+              color: #ffffff;
+              padding: 8px 0px;
+              font-size: 14px;
+            }
+            th:nth-child(1){
+               border-radius: 8px 0px 0px 0px;
+               border-right: 1px solid #ffffff;
+            }
+            th:nth-child(3){
+              border-radius: 0px 8px 0px 0px;
+              border-left: 1px solid #ffffff;
+            }
+            td {
+              background-color: #ffffff;
+              padding: 12px 0;
+              font-size: 16px;
+              font-weight: 600;
+              width: 33.33%;
+            }
+            td:nth-child(1){
+              border-radius: 0px 0px 0px 8px;
+              border-right: 1px solid #222831;
+            }
+            td:nth-child(3){
+              border-radius: 0px 0px 8px 0px;
+              border-left: 1px solid #222831;
+            }
+          }
+        }
+        .timeline_container {
+          border: none;
+          padding: 4.61%;
+          border-radius: 8px;
+          li{
+            padding: 12px;
+            .timeline_user {
+              width: 24px;
+              height: 24px;
+            }
+            p{
+              margin-left: 4px;
+            }
+            .right_container {
+              margin-top: 0px;
+            }
+          }
+        }
+        .like {
+          margin-top: 32px;
+        }
+    }
+  }
+}
+.tab-area {
+    // display: flex;
+    // justify-content: space-around;
     background-color: #222e3e;
     cursor: pointer;
     .tab {
-      width: 300px;
-      height: 30px;
-      line-height: 30px;
       text-align: center;
       color: white;
       border-right: 1px solid #50637b;
@@ -22,14 +153,81 @@
       border: none;
     }
   }
+
+  .follow_tab-area {
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    color: #333;
+    border-bottom: 1px solid #E4E6EF;
+    padding-bottom: 16px;
+    .follow_tab {
+      width: 100%;
+      text-align: center;
+      color: #7E8299;
+    }
+    .follow_tab.follow_active {
+      border: none;
+      color: #181C32;
+    }
+  }
   .content-area {
-    font-size: 30px;
-    text-align: center;
     .content {
       display: none;
     }
     .content.show {
-      margin-top: 50px;
+      display: block;
+    }
+  }
+  .follow_content-area {
+    font-size: 16px;
+    text-align: center;
+    .follow_content {
+      display: none;
+      .follow_ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        padding: 16px 10%;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 16px;
+          .follow_user {
+            width: 32px;
+            height: 32px;
+            border-radius: 100px;
+            object-fit: cover;
+            margin-right: 8px;
+          }
+          a {
+            text-decoration: none;
+            color: #181C32;
+          }
+          .follow_btn {
+            display: block;
+            margin-left: auto;
+            background-color: #2978b5;
+            color: #ffffff;
+            border: none;
+            padding: 4px 16px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 500;
+          }
+          .follow_btn:focus {
+            outline: none;
+          }
+          .unfollow {
+            background-color: #ffffff;
+            color: #2978b5;
+            border: 1px solid #2978b5;
+          }
+        }
+      }
+    }
+    .follow_content.follow_show {
       display: block;
     }
   }

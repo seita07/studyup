@@ -1,6 +1,104 @@
-<% @timeposts.each do |timepost| %>
-    <p><strong>ユーザー名:</strong><%= link_to "#{timepost.user.name}", "/users/#{timepost.user_id}" %></p>
-    <p><strong>投稿内容:</strong><%= timepost.content%>  勉強時間:<%= timepost.total_time%>分</p>
-    <p><strong>科目:</strong><%= timepost.subjects %></p>
-    <p><strong>作成日付:</strong><%= timepost.datetime.strftime('%Y-%m-%d')%></p>
-<% end %>
+  <div class="timeline_container">
+  <ul>
+    <% @timeposts.each do |timepost| %>
+      <li>
+      <span class="timepost_creat_time"><%= time_ago_in_words(timepost.created_at) %>前</span>
+      <div class="timeline_box">
+        <div class="timeline_left">
+          <% if timepost.user.image? %>
+            <%= link_to "/users/#{timepost.user_id}" do %>
+              <%= image_tag @user.image.url,class: "timeline_user" %>
+            <% end %>
+          <% else %>
+            <%= link_to "/users/#{timepost.user_id}" do %>
+              <%= image_tag '/default.png' ,class:"timeline_user"%>
+            <% end %>
+          <% end %>
+          <p><%= timepost.user.name%></p>
+        </div>
+          <div class="right_container">
+            <% if !timepost.content.empty? %>
+              <div class="right_content">
+                <p><%= timepost.content %></p>
+              </div>
+            <% end %>
+            <div class="timeline_right">
+              <p class="timeline_img">画像が入ります</p>
+              <p><i class="fas fa-book-open fa-lg"></i><span><%= timepost.subjects%></span></p>
+              <p>
+                <i class="fas fa-history fa-lg"></i>
+                <% if timepost.time != 0 %>
+                  <strong><%= timepost.time%></strong><small>時間</small><strong><%= timepost.minitus%></strong><small>分</small>
+                <% else %>
+                  <strong><%= timepost.minitus%></strong><small>分</small>
+                <% end %>
+              </p>
+            </div>
+            <div class="timeline_like_comment">
+            <% @comment_count = Comment.where(timepost_id: timepost.id).count %>
+            <%= render "time_likes/like_button" ,timepost: timepost%>
+            <button class="comment_button"><i class="fas fa-comment-alt comment_Included">コメント(<%= @comment_count %>)</i></button>
+            </div>
+            <%= render "comments/comment_list" ,timepost: timepost%>
+          </div>
+      </div>
+      </li>
+    <% end %>
+  </ul>
+  </div>
+
+ <div class="timeline_container like">
+  <ul>
+    <% @likeposts.each do |timepost| %>
+      <li>
+      <span class="timepost_creat_time"><%= time_ago_in_words(timepost.created_at) %>前</span>
+      <div class="timeline_box">
+        <div class="timeline_left">
+          <% if timepost.user.image? %>
+            <%= link_to "/users/#{timepost.user_id}" do %>
+              <%= image_tag @user.image.url,class: "timeline_user" %>
+            <% end %>
+          <% else %>
+            <%= link_to "/users/#{timepost.user_id}" do %>
+              <%= image_tag '/default.png' ,class:"timeline_user"%>
+            <% end %>
+          <% end %>
+          <p><%= timepost.user.name%></p>
+        </div>
+          <div class="right_container">
+            <% if !timepost.content.empty? %>
+              <div class="right_content">
+                <p><%= timepost.content %></p>
+              </div>
+            <% end %>
+            <div class="timeline_right">
+              <p class="timeline_img">画像が入ります</p>
+              <p><i class="fas fa-book-open fa-lg"></i><span><%= timepost.subjects%></span></p>
+              <p>
+                <i class="fas fa-history fa-lg"></i>
+                <% if timepost.time != 0 %>
+                  <strong><%= timepost.time%></strong><small>時間</small><strong><%= timepost.minitus%></strong><small>分</small>
+                <% else %>
+                  <strong><%= timepost.minitus%></strong><small>分</small>
+                <% end %>
+              </p>
+            </div>
+            <div class="timeline_like_comment">
+            <% @comment_count = Comment.where(timepost_id: timepost.id).count %>
+            <%= render "time_likes/like_button" ,timepost: timepost%>
+            <button class="comment_button"><i class="fas fa-comment-alt comment_Included">コメント(<%= @comment_count %>)</i></button>
+            </div>
+            <%= render "comments/comment_list" ,timepost: timepost%>
+          </div>
+      </div>
+      </li>
+    <% end %>
+  </ul>
+  </div>
+<script>
+$(function () {
+    $('.comment_button').on('click', () => {
+        $('.comment_list').fadeToggle('slow');
+    });
+});
+</script>

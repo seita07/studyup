@@ -17,7 +17,7 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete,class:"dropdown-item" %> </li>
           <li><%= link_to "基本情報編集", edit_user_registration_path,class:"dropdown-item" %></li>
-          <li><a class="dropdown-item" href="#">マイページ</a></li>
+          <li><%= link_to "マイページ", "/users/#{current_user.id}",class:"dropdown-item" %></li>
         </ul>
       </div>
       

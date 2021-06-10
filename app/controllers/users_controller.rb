@@ -6,11 +6,13 @@ class UsersController < ApplicationController
     def show
       @user = User.find_by(id: params[:id])
       @timeposts = Timepost.where(user_id: params[:id])
+      @likeposts = @user.like_times
+      @methodposts = Methodpost.where(user_id: params[:id])
       gon.day = get_day
       gon.study_time = get_eachsubject_weekly_totaltime
       @day_totaltime = dayly_total_studytime
-      @weel_totaltime = weekly_total_studytime
       @month_totaltime = month_total_studytime
+      @totaltime = total_studytime
     end
   
     def guest_sign_in
@@ -67,19 +69,22 @@ class UsersController < ApplicationController
           subjects_dayly_totaltime_list.push(dayly_posts.sum)
         end
       end
-      subjects_dayly_totaltime_list.sum
+      totaltime = subjects_dayly_totaltime_list.sum
+      hour = totaltime/60
+      minitues = totaltime%60
+      return hour,minitues
     end
   
-    def weekly_total_studytime
-      weekly_totaltime_list = []
-      today = Time.current.at_end_of_day
-      from = today - 6.day
-      studytime_posts = Timepost.where(datetime: from...today).where(user_id: params[:id])
-      studytime_posts.each do |post|
-        weekly_totaltime_list.push(post.total_time)
-      end
-      weekly_totaltime_list.sum
-    end
+    # def weekly_total_studytime
+    #   weekly_totaltime_list = []
+    #   today = Time.current.at_end_of_day
+    #   from = today - 6.day
+    #   studytime_posts = Timepost.where(datetime: from...today).where(user_id: params[:id])
+    #   studytime_posts.each do |post|
+    #     weekly_totaltime_list.push(post.total_time)
+    #   end
+    #   weekly_totaltime_list.sum
+    # end
   
     def month_total_studytime
       month_totaltime_list = []
@@ -89,7 +94,18 @@ class UsersController < ApplicationController
       studytime_posts.each do |post|
         month_totaltime_list.push(post.total_time)
       end
-      month_totaltime_list.sum
+      return month_totaltime_list.sum/60
+    end
+
+    def total_studytime
+      totaltime_list = []
+      today = Time.current.at_end_of_day
+      from = today - 364.day
+      studytime_posts = Timepost.where(datetime: from...today).where(user_id: params[:id])
+      studytime_posts.each do |post|
+        totaltime_list.push(post.total_time)
+      end
+      return totaltime_list.sum/60
     end
   end
   

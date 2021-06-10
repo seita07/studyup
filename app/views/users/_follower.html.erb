@@ -1,0 +1,23 @@
+<% if @following_users %>
+    <ul class="follow_ul">
+    <% @following_users.each do |following_user| %>
+    <li>
+        <div class="follow_user_box">
+        <% if following_user.image? %>
+            <%= link_to "/users/#{following_user.id}" do %>
+              <%= image_tag @user.image.url,class: "follow_user" %>
+            <% end %>
+          <% else %>
+            <%= link_to "/users/#{following_user.id}" do %>
+              <%= image_tag '/default.png' ,class:"follow_user"%>
+            <% end %>
+          <% end %>
+        <%= link_to "#{following_user.name}", user_path %>
+        </div>
+        <% if user_signed_in? %>
+            <%= render "relationships/follow_button", user: following_user %>
+        <% end %>
+    </li>
+    <% end%>
+    </ul>
+<% end%>
