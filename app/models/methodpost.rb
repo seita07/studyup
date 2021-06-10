@@ -2,14 +2,20 @@ class Methodpost < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :method_likes, dependent: :destroy
-  has_many :tag_maps, dependent: :destroy
-  has_many :tags, through: :tag_maps
 
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :content, presence: true
   validates :subjects, presence: true
   validates :title, presence: true
+
+  def self.search(search)
+    if search
+      Methodpost.where(['title LIKE ?', "%#{search}%"]).or(Methodpost.where(['subjects LIKE ?', "%#{search}%"])).or(Methodpost.where(['content LIKE ?', "%#{search}%"]))
+    else
+      Methodpost.all
+    end
+  end
 
   def avg_score
     unless self.reviews.empty?

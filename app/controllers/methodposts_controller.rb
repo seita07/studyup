@@ -1,7 +1,8 @@
 class MethodpostsController < ApplicationController
     before_action :authenticate_user!, only: %i[show new create edit update destroy]
     def index
-      @methodposts = Methodpost.all.order(created_at: :desc)
+      @methodposts = Methodpost.search(params[:search])
+      # @methodposts = Methodpost.all.order(created_at: :desc)
     end
   
     def show

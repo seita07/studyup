@@ -1,7 +1,6 @@
 // Place all the styles related to the methodposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
 //勉強方法一覧ページ
 .methodpost_content {
     font-family: 'Noto Sans JP', sans-serif;
@@ -9,23 +8,44 @@
     padding: 4.61%;
     background-color: #F3F6F9; 
     .methodpost_container {
-      padding: 4.61% 0;
-      display: flex;
       width: 100%;
       .methodpost_bar {
-        // background-color: #0a1931;
-        // background-color: #222831;
-        background:lighten(#0a1931, 1%);
         color: #ffffff;
-        width: 160px;
         border-radius: 8px; 
-        margin-right:  48px;
-        padding: 48px 0;
+        padding: 16px 0;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        .fas {
-          display: block;
+        justify-content: space-between;
+        .methodbar_left {
+          a{
+            background-color: #1BC5BD;
+            border: none;
+            color: #ffffff;
+            padding: 16px 24px;
+            font-size: 14px;
+            border-radius: 16px;
+            text-decoration: none;
+          }
+        }
+        #search{
+          border: 1px solid #dcdcdc;
+          padding: 8px 24px;
+          border-radius: 8px;
+          font-size: 15px;
+          font-weight: 500;
+        }
+        #search:focus {
+          outline: none;
+        }
+        .search_btn {
+            margin-left: 8px;
+            background-color: #F64E60;
+            border: none;
+            color: #ffffff;
+            padding: 8px 24px;
+            font-size: 14px;
+            border-radius: 8px;
+            font-weight: 500;
         }
 
       }
@@ -33,20 +53,107 @@
         width: 100%;
         margin-left: auto;
         background-color: #ffffff;
-        padding: 8.46% 8.46%;
+        padding: 4.61% 8.46%;
         border-radius: 16px;
         border: 1px solid #dcdcdc;
+        #methodpost_h2{
+          text-align: center;
+          font-size: 24px;
+          font-weight: 600;
+          padding-bottom: 24px;
+        }
         ul {
           list-style-type: none;
           padding: 0;
           margin: 0;
+          h3 {
+            font-size: 24px;
+            line-height: 1.5em;
+            font-weight: 500; 
+            text-align: center;
+            margin-top: 24px;
+          }
           li {
             padding: 16px 0 8px 0;
-            border-bottom: 1px solid #0a1931;
+            border-bottom: 1px solid #dcdcdc;
+            .edit_box {
+              display: flex;
+              margin-bottom: 16px;
+              #tab_span {
+                  font-size: 12px;
+                  line-height: 1.7em;
+                  color: #ffffff;
+                  padding: 4px 12px;
+                  text-align: center;
+                  background-color: #6610f2;
+                  border-radius: 8px;
+                  font-weight: 500;
+                }
+              
+            }
+            .edit_inner {
+              position: relative;
+              margin-left: auto;
+              display: block;
+              text-align: right;
+              
+              .click_button {
+                text-decoration: none;
+                // background-color: #eee5ff;
+                padding: 8px 8px;
+                border-radius: 8px;
+                cursor: pointer;
+                span{
+                  font-size: 4px;
+                  line-height: 0em;
+                  color: #996af7;
+                }
+                span:nth-of-type(1){
+                  margin-right: 4px;
+                  color: #6610f2;
+                }
+              }
+              .click_button:hover{
+                background-color: #eee5ff;
+              }
+            }
+            .edit_list { 
+              position: absolute;
+              top: 32px;
+              display: none;
+              background-color: #ffffff;
+              border: 1px solid #dcdcdc;
+              border-radius: 8px;
+              box-shadow:2px 2px 0px rgba(0,0,0,.1);
+              font-size: 14px;
+              width: 140px;
+              box-sizing: border-box;
+              p{
+                margin: 0;
+                text-align: center;
+                box-sizing: border-box;
+                padding-top:16px ;
+                a{
+                  text-decoration: none;
+                  padding:0  32px;
+                  color: #333;
+                  
+                }
+              }
+              input{
+                border: none;
+                background-color: #ffffff;
+                margin: 0 auto;
+                text-align: center;
+                display: block;
+                padding:0  32px;
+              }
+            }
             h2 {
               font-size: 24px;
               line-height: 1.5em;
               font-weight: 600;
+              padding-right: 32px;
               a {
                 text-decoration: none;
                 color: #333;
@@ -57,7 +164,7 @@
               align-items: center;
               justify-content: flex-end;
               .tag_box {
-                margin-right: auto;
+                // margin-right: auto;
                 span {
                   font-size: 14px;
                   color: #ffffff;

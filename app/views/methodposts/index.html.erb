@@ -1,17 +1,38 @@
 <div class="methodpost_content">
   <div class="methodpost_container">
     <div class="methodpost_bar">
-      <p><i class="fas fa-user-graduate fa-3x"></i></p>
+      <div class="methodbar_left">
+        <span><%= link_to "勉強方法投稿", new_methodpost_path %></span>
+      </div>
+      <%= form_tag(methodposts_path,:method => 'get') do %>
+        <%= text_field_tag :search, '', placeholder: 'キーワード検索'%>
+        <%= submit_tag '検索', :name => nil, class: "search_btn" %>
+      <% end %>
     </div>
     <div class="methodpost_box">
+      <h2 id="methodpost_h2">おすすめ勉強方法一覧</h2>
       <ul>
+        <% if @methodposts.empty?%>
+          <h3>検索結果はありませんでした</h3>
+        <% end %>
         <% @methodposts.each do |methodpost| %>
           <li>
+            <% if user_signed_in? %>
+            <%if current_user.id == methodpost.user.id %>
+            <div class="edit_box">
+            <span id="tab_span"><%= methodpost.subjects%></span>
+            <div class="edit_inner">
+            <a class="click_button"><span>⚫︎</span><span>⚫︎</span></a>
+            <div class="edit_list">
+              <p><%= link_to "投稿編集", "/methodposts/#{methodpost.id}/edit"%></p>
+              <p><%= button_to "投稿削除", "/methodposts/#{methodpost.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %></p>
+            </div>
+            </div>
+          </div>
+            <% end %>
+            <% end %>
           <h2><%= link_to "#{methodpost.title}", "/methodposts/#{methodpost.id}" %></h2>
             <div class="methodpost_reviewcontent">
-            <div class="tag_box">
-              <span><%= methodpost.subjects%></span>
-            </div>
               <div class="average-score">
                 <div class="star-rating">
                   <div class="star-rating-front" style="width: <%= methodpost.review_score_percentage %>%">★★★★★</div>
@@ -46,4 +67,18 @@
     </div>
   </div>
 </div>
-<p><%= link_to "勉強法投稿新規作成", new_methodpost_path %></p>
+<script>
+$(document).on('click', function(e) {
+	// ２．クリックされた場所の判定
+	if(!$(e.target).closest('.edit_list').length && !$(e.target).closest('.click_button').length){
+		$('.edit_list').fadeOut();
+	}else if($(e.target).closest('.click_button').length){
+		// ３．ポップアップの表示状態の判定
+		if($('.edit_list').is(':hidden')){
+			$('.edit_list').fadeIn();
+		}else{
+			$('.edit_list').fadeOut();
+		}
+	}
+});
+</script>
