@@ -1,0 +1,581 @@
+.methodpost_content {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #333;
+  padding: 4.61%;
+  background-color: #F3F6F9;
+}
+
+.methodpost_content .methodpost_container {
+  width: 100%;
+}
+
+.methodpost_content .methodpost_container .methodpost_bar {
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.methodpost_content .methodpost_container .methodpost_bar .methodbar_left a {
+  background-color: #1BC5BD;
+  border: none;
+  color: #ffffff;
+  padding: 10px 24px;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.methodpost_content .methodpost_container .methodpost_bar #search {
+  border: 1px solid #dcdcdc;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.methodpost_content .methodpost_container .methodpost_bar #search:focus {
+  outline: none;
+}
+
+.methodpost_content .methodpost_container .methodpost_bar .search_btn {
+  margin-left: 8px;
+  background-color: #F64E60;
+  border: none;
+  color: #ffffff;
+  padding: 8px 24px;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.methodpost_content .methodpost_container .methodpost_box {
+  width: 100%;
+  margin-left: auto;
+  background-color: #ffffff;
+  padding: 4.61% 8.46%;
+  border-radius: 16px;
+  border: 1px solid #dcdcdc;
+}
+
+.methodpost_content .methodpost_container .methodpost_box #methodpost_h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 24px;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul h3 {
+  font-size: 24px;
+  line-height: 1.5em;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li {
+  padding: 16px 0 8px 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .edit_box {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .edit_box #tab_span {
+  font-size: 12px;
+  line-height: 1.7em;
+  color: #ffffff;
+  padding: 4px 12px;
+  text-align: center;
+  background-color: #6610f2;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .edit_inner {
+  position: relative;
+  margin-left: auto;
+  display: block;
+  text-align: right;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .edit_inner .click_button {
+  text-decoration: none;
+  padding: 0px 8px 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .edit_inner .click_button span {
+  font-size: 4px;
+  line-height: 0em;
+  color: #996af7;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .edit_inner .click_button span:nth-of-type(1) {
+  margin-right: 4px;
+  color: #6610f2;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .edit_inner .click_button:hover {
+  background-color: #eee5ff;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .edit_list {
+  position: absolute;
+  top: 32px;
+  display: none;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  width: 140px;
+  box-sizing: border-box;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .edit_list p {
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 16px;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .edit_list p a {
+  text-decoration: none;
+  padding: 0  32px;
+  color: #333;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .edit_list input {
+  border: none;
+  background-color: #ffffff;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  padding: 0  32px;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li h2 {
+  font-size: 24px;
+  line-height: 1.5em;
+  font-weight: 600;
+  padding-right: 32px;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li h2 a {
+  text-decoration: none;
+  color: #333;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .methodpost_reviewcontent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .methodpost_reviewcontent .tag_box span {
+  font-size: 14px;
+  color: #ffffff;
+  padding: 4px 12px;
+  text-align: center;
+  background-color: #845ec2;
+  border-radius: 8px;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .methodpost_reviewcontent .methodpost_likebox {
+  margin-left: 24px;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .methodpost_uer_box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .methodpost_uer_box .methodpost_user {
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .methodpost_uer_box p {
+  margin-left: 16px;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .methodpost_uer_box .created {
+  font-size: 12px;
+  color: #8f8f8f;
+}
+
+.methodpost_content .methodpost_container .methodpost_box ul li .methodpost_uer_box a {
+  text-decoration: none;
+  color: #333;
+}
+
+.methodpost_detail_content {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #333;
+  padding: 4.61%;
+  background-color: #F3F6F9;
+}
+
+.methodpost_detail_content .methodpost_detail_box {
+  display: flex;
+}
+
+.methodpost_detail_content .methodpost_detail_container_left {
+  background-color: #ffffff;
+  padding: 6.15% 8.46%;
+  border-radius: 16px;
+  width: 100%;
+  padding-right: 64px;
+}
+
+.methodpost_detail_content .methodpost_detail_container_left .detail_left_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.methodpost_detail_content .methodpost_detail_container_left .detail_left_top #tab_span {
+  font-size: 12px;
+  line-height: 1.7em;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-align: center;
+  background-color: #6610f2;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.methodpost_detail_content .methodpost_detail_container_left .detail_left_top .edit_box {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+}
+
+.methodpost_detail_content .methodpost_detail_container_left .detail_left_top .edit_box a {
+  text-decoration: none;
+  background-color: #0BB783;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+
+.methodpost_detail_content .methodpost_detail_container_left .detail_left_top .edit_box input {
+  border: none;
+  background-color: #0BB783;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.methodpost_detail_content .methodpost_detail_container_left .detail_left_top .edit_box input:focus {
+  outline: none;
+}
+
+.methodpost_detail_content .methodpost_detail_container_left .detail_left_top .edit_box input:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=70);
+}
+
+.methodpost_detail_content .methodpost_detail_container_left h2 {
+  margin-top: 24px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.5em;
+}
+
+.methodpost_detail_content .methodpost_detail_container_left .detail_text {
+  font-size: 16px;
+  line-height: 1.7em;
+  margin-top: 32px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.methodpost_detail_content .methodpost_detail_container_left h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5em;
+  margin-top: 64px;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right {
+  background-color: #ffffff;
+  padding: 6.15% 8.46%;
+  border-radius: 16px;
+  width: 400px;
+  margin-left: 32px;
+  padding: 64px 32px;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right h3 {
+  font-size: 20px;
+  text-align: center;
+  border-bottom: #dcdcdc 1px solid;
+  padding-bottom: 16px;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right .detail_user_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0 8px 0;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right .detail_user_box .methodpost_user {
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right .user_name {
+  font-size: 16px;
+  text-align: center;
+  display: block;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right .user_name a {
+  text-decoration: none;
+  color: #333;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right .user_follow_p {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right .follow_btn {
+  display: block;
+  margin: 0  auto 54px auto;
+  background-color: #2978b5;
+  color: #ffffff;
+  border: none;
+  padding: 4px 16px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right .follow_btn:focus {
+  outline: none;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right .unfollow {
+  background-color: #ffffff;
+  color: #2978b5;
+  border: 1px solid #2978b5;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right .created {
+  font-size: 12px;
+  color: #8f8f8f;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right ul {
+  padding: 0 10%;
+  margin: 24px 0;
+  list-style-type: none;
+  color: #3F4254;
+  text-align: center;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right ul li {
+  margin-bottom: 12px;
+}
+
+.methodpost_detail_content .methodpost_detail_container_right ul li span {
+  margin-left: 32px;
+}
+
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1.3em;
+  font-size: 25px;
+  overflow: hidden;
+}
+
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+
+.star-rating-back {
+  color: #ccc;
+}
+
+.average-score {
+  display: flex;
+}
+
+.average-score-display {
+  font-size: 16px;
+}
+
+.average-score-display p {
+  margin-left: 12px;
+  padding-top: 12px;
+}
+
+.rating-box {
+  margin-top: 32px;
+}
+
+.rating-box .ratings .fa {
+  font-size: 30px;
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+.rating-box .textarea {
+  width: 100%;
+  margin: 16px 0;
+  height: 100px;
+}
+
+.rating-box .button {
+  background-color: #fb9300;
+  border: none;
+  color: #ffffff;
+  width: 160px;
+  display: block;
+  border-radius: 8px;
+  padding: 8px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 0px #b56a01;
+  font-weight: 400;
+  margin-left: auto;
+  font-size: 16px;
+}
+
+.rating-box .button:focus {
+  outline: none;
+}
+
+.main-rating {
+  display: flex;
+}
+
+.rating-value-display {
+  font-size: 14px;
+  margin-left: 16px;
+}
+
+.review_box {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.review_box li {
+  padding: 16px 8px;
+  border-bottom: #0a1931 1px solid;
+}
+
+.review_box li .review_head {
+  display: flex;
+}
+
+.review_box li .review_head .review_user_p {
+  padding-top: 8px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.review_box li .review_head .review_user_p span {
+  margin-left: 8px;
+}
+
+.review_box li .review_head .review_user {
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.review_box li .review_head .edit_container {
+  position: relative;
+  margin-left: auto;
+  display: block;
+  text-align: right;
+}
+
+.review_box li .review_head .edit_container .click_button {
+  text-decoration: none;
+  padding: 0px 8px 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.review_box li .review_head .edit_container .click_button span {
+  font-size: 4px;
+  line-height: 0em;
+  color: #996af7;
+}
+
+.review_box li .review_head .edit_container .click_button span:nth-of-type(1) {
+  margin-right: 4px;
+  color: #6610f2;
+}
+
+.review_box li .review_head .edit_container .click_button:hover {
+  background-color: #eee5ff;
+}
+
+.review_box li .review_head .edit_list {
+  position: absolute;
+  top: 32px;
+  left: -90px;
+  display: none;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  width: 140px;
+  box-sizing: border-box;
+}
+
+.review_box li .review_head .edit_list p {
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 16px;
+}
+
+.review_box li .review_head .edit_list p a {
+  text-decoration: none;
+  padding: 0  32px;
+  color: #333;
+}
+
+.review_box li .review_head .edit_list input {
+  border: none;
+  background-color: #ffffff;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  padding: 0  24px;
+}

@@ -2,6 +2,13 @@
 <div class="methodpost_detail_content">
 <div class="methodpost_detail_box">
   <div class="methodpost_detail_container_left">
+    <div class="detail_left_top">
+      <span id="tab_span"><%= @methodpost.subjects%></span>
+      <div class="edit_box">
+        <%= link_to "投稿編集", "/methodposts/#{@methodpost.id}/edit"%>
+        <%= button_to "投稿削除", "/methodposts/#{@methodpost.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %>
+      </div>
+    </div>
     <h2><%= @methodpost.title %></h2>
     <p class="detail_text"><%= @methodpost.content %></p>
       <h3>レビュー一覧</h3>
@@ -9,6 +16,7 @@
       <%= render "reviews/review_form" , review: @review, methodpost: @methodpost%>
   </div>
   <div class="methodpost_detail_container_right">
+    <h3>投稿者情報</h3>
     <p class="detail_user_box">
       <% if @methodpost.user.image? %>
         <%= link_to "/users/#{methodpost.user_id}" do %>
@@ -19,31 +27,21 @@
           <%= image_tag '/default.png' ,class:"methodpost_user"%>
         <% end %>
       <% end %>
-      <span class="user_name"><%= link_to "#{@methodpost.user.name}", "/users/#{@methodpost.user_id}" %></span>
     </p>
+    <span class="user_name"><%= link_to "#{@methodpost.user.name}", "/users/#{@methodpost.user_id}" %></span>
+    <%@following_users = @methodpost.user.followings%> 
+    <%@follower_users = @methodpost.user.followers%>
+    <p class="user_follow_p"><%= @following_users.count %>フォロー　<%= @follower_users.count %>フォロワー</p>
+    <% if user_signed_in? %>
+            <%= render "relationships/follow_button", user: @methodpost.user %>
+    <% end %>
+    <h3>投稿情報</h3>
     <ul>
-      <li>
-        <span><i class="fas fa-clock fa-lg"></i>作成日</span>
-        <p>作成日 <%= @methodpost.created_at.strftime('%Y-%m-%d')%></p>
-      </li>
-      <li></li>
-      <li></li>
+      <li>グッド数(<%= @methodlikes_count %>)</li>
+      <li>レビュー数(<%= @methodpost.reviews.count %>)</span></li>
+      <li>作成日 <span><%= @methodpost.created_at.strftime('%Y-%m-%d')%></span></li>
+      <li>更新日 <span><%= @methodpost.updated_at.strftime('%Y-%m-%d')%></span></li>
     </ul>
   </div>
   </div>
 </div>
-<p></p>
-<p><%= @methodpost.subjects %></p>
-<% if user_signed_in? %>
-      <% @methodlikes_count = MethodLike.where(methodpost_id: @methodpost.id).count %>
-      <% if @methodlike = MethodLike.find_by(user_id: current_user.id, methodpost_id: @methodpost.id) %>
-        <%= button_to  "/methodposts/#{@methodpost.id}/methodlike/#{@methodlike.id}", method: :delete do %>
-          <i class="fas fa-heart like-btn-unlike"><%= @methodlikes_count %>いいね</i>
-        <% end %>
-      <% else %>
-          <%= button_to  "/methodposts/#{@methodpost.id}/methodlike", method: :post do %>
-            <i class="fas fa-heart like-btn"><%= @methodlikes_count %>いいね</i>
-          <% end %>
-      <% end %>
-<% end %>
-    <span class="created">作成日 <%= @methodpost.created_at.strftime('%Y-%m-%d')%></span>

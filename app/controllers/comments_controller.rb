@@ -3,20 +3,20 @@ class CommentsController < ApplicationController
     def create
       @comment = Comment.new(comment_params)
       if @comment.save
-        redirect_to timeposts_url
+        redirect_to request.referer
       else
         flash.now[:alert] = 'コメントを入力してください。'
-        redirect_to timeposts_url
+        redirect_to request.referer
       end
     end
   
     def destroy
       @comment = Comment.find(params[:id])
       if @comment.destroy
-        redirect_to timeposts_url
+        redirect_to request.referer
       else
         flash.now[:alert] = 'コメント削除に失敗しました'
-        redirect_to users_url
+        redirect_to request.referer
       end
     end
   

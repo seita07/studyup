@@ -15,7 +15,7 @@ class TimepostsController < ApplicationController
     @timepost.total_time = @timepost.time * 60 + @timepost.minitus
     if @timepost.save
       flash[:notice] = "#{@timepost.total_time}分がんばりました"
-      redirect_to timeposts_url
+      redirect_to request.referer
     else
       flash[:alert] = '記録できませんでした'
       render 'new'
@@ -29,7 +29,7 @@ class TimepostsController < ApplicationController
   def update
     @timepost = Timepost.find(params[:id])
     if @timepost.update(timepost_params)
-      redirect_to timeposts_url
+      redirect_to request.referer
     else
       render 'edit'
     end
@@ -38,7 +38,7 @@ class TimepostsController < ApplicationController
   def destroy
     Timepost.find_by(id: params[:id]).destroy
     flash[:success] = '投稿を削除しました'
-    redirect_to timeposts_url
+    redirect_to request.referer
   end
 
   def search_rakuten_api

@@ -20,7 +20,7 @@ class UsersController < ApplicationController
         user.password = SecureRandom.urlsafe_base64
       end
       sign_in user
-      redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+      redirect_to request.referer, notice: 'ゲストユーザーとしてログインしました。'
     end
 
     def get_day
@@ -74,17 +74,7 @@ class UsersController < ApplicationController
       minitues = totaltime%60
       return hour,minitues
     end
-  
-    # def weekly_total_studytime
-    #   weekly_totaltime_list = []
-    #   today = Time.current.at_end_of_day
-    #   from = today - 6.day
-    #   studytime_posts = Timepost.where(datetime: from...today).where(user_id: params[:id])
-    #   studytime_posts.each do |post|
-    #     weekly_totaltime_list.push(post.total_time)
-    #   end
-    #   weekly_totaltime_list.sum
-    # end
+
   
     def month_total_studytime
       month_totaltime_list = []

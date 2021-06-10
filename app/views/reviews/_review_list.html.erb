@@ -12,7 +12,7 @@
           <%= image_tag '/default.png' ,class:"review_user"%>
         <% end %>
       <% end %>
-      <%= review.user.name %>
+      <span><%= review.user.name %></span>
       </p>
       <div class="average-score">
         <div class="star-rating">
@@ -20,8 +20,29 @@
           <div class="star-rating-back">★★★★★</div>
         </div>
       </div>
+      <div class="edit_container">
+        <a class="click_button"><span>⚫︎</span><span>⚫︎</span></a>
+        <div class="edit_list">
+        <p><%= button_to "レビュー削除", "/methodposts/#{@methodpost.id}/reviews/#{review.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %></p>
+      </div>
+      </div>
     </div>
     <p class="review_text"><%= review.text %></p>
     </li>
   <% end %>
 </ul>
+<script>
+$(document).on('click', function(e) {
+	// ２．クリックされた場所の判定
+	if(!$(e.target).closest('.edit_list').length && !$(e.target).closest('.click_button').length){
+		$('.edit_list').fadeOut();
+	}else if($(e.target).closest('.click_button').length){
+		// ３．ポップアップの表示状態の判定
+		if($('.edit_list').is(':hidden')){
+			$('.edit_list').fadeIn();
+		}else{
+			$('.edit_list').fadeOut();
+		}
+	}
+});
+</script>

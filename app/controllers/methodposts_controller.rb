@@ -2,7 +2,6 @@ class MethodpostsController < ApplicationController
     before_action :authenticate_user!, only: %i[show new create edit update destroy]
     def index
       @methodposts = Methodpost.search(params[:search])
-      # @methodposts = Methodpost.all.order(created_at: :desc)
     end
   
     def show
@@ -20,7 +19,7 @@ class MethodpostsController < ApplicationController
       @methodpost = current_user.methodposts.build(methodpost_params)
       if @methodpost.save
         flash[:success] = 'methodpost created!'
-        redirect_to methodposts_url
+        redirect_to request.referer
       else
         render 'new'
       end
@@ -33,7 +32,7 @@ class MethodpostsController < ApplicationController
     def update
       @methodpost = Methodpost.find(params[:id])
       if @methodpost.update(methodpost_params)
-        redirect_to methodposts_url
+        redirect_to request.referer
       else
         render 'edit'
       end
@@ -42,7 +41,7 @@ class MethodpostsController < ApplicationController
     def destroy
       Methodpost.find_by(id: params[:id]).destroy
       flash[:success] = '投稿を削除しました'
-      redirect_to methodposts_url
+      redirect_to request.referer
     end
   
     private
