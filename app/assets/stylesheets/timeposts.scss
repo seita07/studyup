@@ -178,6 +178,7 @@
                 display: flex;
                 align-items: baseline;
                 margin-bottom: 16px;
+                padding-left: 5%;
                 .edit_inner {
                     position: relative;
                     margin-left: auto;
@@ -252,7 +253,7 @@
             }
             .right_container {
                 margin-left: auto;
-                width: 90%;
+                width: 80%;
                 .right_content {
                     display: block;
                     width: 100%;
@@ -266,26 +267,30 @@
                     width: 100%;
                     border: #dcdcdc solid 1px;
                     border-radius: 16px;
-                    padding: 2.61% 4.61%;
+                    padding: 2.61% 10%;
                     display: flex;
                     align-items: center;
                     .timeline_img{
-                        margin: 0;
+                        margin: 0 10% 0 0;
                         img {
                             max-width: 150px;
                             max-height: 120px;
                             box-sizing: border-box;
                         }
                     }
+                    p{
+                        margin:0 8% 0 0;
+                        padding: 0;
+                    }
                     p:nth-child(n+1){
                         letter-spacing: 0.05em;
                         .fa-history{
                             color: #ffc93c;
-                            margin-left: 24px;
+                            margin-right : 8px;
                         }
                         .fa-book-open {
                             color: #ffc2b4;
-                            margin-right: 8px;
+                            margin-right: 16px;
                         }
                         small {
                             color: #8f8f8f;

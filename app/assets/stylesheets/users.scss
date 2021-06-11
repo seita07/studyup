@@ -323,6 +323,11 @@
             width: 100px;
             padding: 8px 16px;
           }
+          #user_target_school {
+            width: 252px;
+            margin-left: auto;
+            margin-right: 16px;
+          }
         }
         .actions {
           margin-top: 32px;
@@ -345,11 +350,13 @@
               background-color: #0BB783;
             }
           }
-          .deletebutton {
             input {
+              padding: 8px 24px;
+              border: none;
+              border-radius: 8px;
+              color: #ffffff;
               background-color: #f14668; 
             }
-          }
         }
     }
   }

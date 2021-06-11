@@ -377,6 +377,12 @@
   padding: 8px 16px;
 }
 
+.edit_content .edit_container .field #user_target_school {
+  width: 252px;
+  margin-left: auto;
+  margin-right: 16px;
+}
+
 .edit_content .edit_container .actions {
   margin-top: 32px;
   padding: 0 14%;
@@ -402,6 +408,10 @@
   background-color: #0BB783;
 }
 
-.edit_content .edit_container .actions .deletebutton input {
+.edit_content .edit_container .actions input {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
   background-color: #f14668;
 }
