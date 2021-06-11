@@ -39,7 +39,11 @@
               </div>
             <% end %>
             <div class="timeline_right">
-              <p class="timeline_img">画像が入ります</p>
+              <p class="timeline_img">
+              <% if timepost.img %>
+                <%= image_tag timepost.img %> 
+              <% end %>
+              </p>
               <p><i class="fas fa-book-open fa-lg"></i><span><%= timepost.subjects%></span></p>
               <p>
                 <i class="fas fa-history fa-lg"></i>

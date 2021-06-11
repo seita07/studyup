@@ -3,12 +3,15 @@ class TimepostsController < ApplicationController
 
   def index
     @timeposts = Timepost.all.order(created_at: :desc)
-    # @timeposts = Timepost.search(params[:search])
   end
 
   def new
     @timepost = Timepost.new
-    @books = Book.all
+    if params[:url]
+      @url = params[:url]
+    else 
+      @url = '/default_img.png'
+    end
   end
 
   def create
@@ -40,6 +43,10 @@ class TimepostsController < ApplicationController
     Timepost.find_by(id: params[:id]).destroy
     flash[:success] = '投稿を削除しました'
     redirect_to request.referer
+  end
+
+  def book 
+    @books = current_user.books
   end
 
   def search_rakuten_api

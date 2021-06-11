@@ -1,0 +1,11 @@
+<h2>参考書を決める</h2>
+<% @books.each do |book|%>
+    <p><%= book.title%></p>
+     <%= image_tag book.img_url %> 
+     
+    <%= form_tag(new_timepost_path,:method => 'get') do %>
+    <%= hidden_field_tag :url, book.img_url %>
+    <%= submit_tag '選択', :name => nil, class: "search_btn" %>
+    <% end %>
+<% end %>
+<p><%= link_to "参考書を登録する", books_path %></p>

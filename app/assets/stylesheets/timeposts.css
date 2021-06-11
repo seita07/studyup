@@ -19,6 +19,31 @@
   padding: 32px 0;
 }
 
+.timepost_content .timepost_form_each .book_box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.timepost_content .timepost_form_each .book_box img {
+  max-width: 150px;
+  max-height: 150px;
+  margin-left: auto;
+  display: block;
+  margin-top: 16px;
+}
+
+.timepost_content .timepost_form_each .book_box p {
+  margin-top: 24px;
+  font-weight: 600;
+}
+
+.timepost_content .timepost_form_each .book_link {
+  text-decoration: none;
+  margin-left: auto;
+  font-weight: 600;
+}
+
 .timepost_content .timepost_form_each i {
   margin-right: 16px;
 }
@@ -285,11 +310,13 @@
 }
 
 .timeline_container li .timeline_box .right_container .timeline_right .timeline_img {
-  border: #8f8f8f solid 2px;
-  padding: 10px;
-  margin-right: 46px;
-  width: 100px;
-  height: 100px;
+  margin: 0;
+}
+
+.timeline_container li .timeline_box .right_container .timeline_right .timeline_img img {
+  max-width: 150px;
+  max-height: 120px;
+  box-sizing: border-box;
 }
 
 .timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) {

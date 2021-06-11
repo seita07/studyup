@@ -17,6 +17,28 @@
         align-items: center;
         flex-wrap: wrap;
         padding: 32px 0;
+        .book_box {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            img {
+                max-width: 150px;
+                max-height: 150px;
+                margin-left: auto;
+                display: block;
+                margin-top: 16px;
+            }
+            p{
+                margin-top: 24px;
+                font-weight: 600;
+            }
+        }
+        .book_link{
+            text-decoration: none;
+            margin-left: auto;
+            font-weight: 600;
+            
+        }
         i {
             margin-right: 16px;
         }
@@ -248,11 +270,12 @@
                     display: flex;
                     align-items: center;
                     .timeline_img{
-                        border: #8f8f8f solid 2px;
-                        padding: 10px;
-                        margin-right: 46px;
-                        width: 100px;
-                        height: 100px;
+                        margin: 0;
+                        img {
+                            max-width: 150px;
+                            max-height: 120px;
+                            box-sizing: border-box;
+                        }
                     }
                     p:nth-child(n+1){
                         letter-spacing: 0.05em;

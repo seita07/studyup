@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :books
+  get '/timeposts/books', to: 'timeposts#book'
   resources :timeposts do
     resources :comments, only: %i[create destroy]
     resources :time_likes, only: %i[create destroy]
   end
+  
   resources :methodposts do
     resources :reviews, only: %i[create destroy]
     resources :methodlike, only: %i[create destroy]

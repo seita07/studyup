@@ -1,10 +1,9 @@
 <div class="timepost_content">
-  <p><%= link_to "参考書を登録する", books_path %></p>
   <div class="timepost_container">
     <%= form_with(model: @timepost, local: true) do |f| %>
       <div class="timepost_form_each">
       <i class="far fa-clipboard fa-2x"></i>
-      <span>科目</span>
+      <span>科目(必須)</span>
       <%= f.select :subjects, [["国語","国語"],["現代文", "現代文"], ["古文", "古文"], ["漢文", "漢文"],
                               ["数学","数学"],["数学I・A", "数学I・A"], ["数学II・B", "数学II・B"], ["数学III", "数学III"],
                               ["英語","英語"],["英単語", "英単語"],["英文法", "英文法"],["英文解釈","英文解釈"],["英長文", "英長文"],["リスニング","リスニング"],
@@ -14,19 +13,20 @@
       <div class="timepost_form_each">
       <i class="far fa-clipboard fa-2x"></i>
       <span>参考書選択</span>
-      <%= f.select :img, [["国語","国語"]] %>
-      <a class="book_button">選択ボタン</a>
-      <ul class="book_list">
-        <% @books.each do |book|%>
-        <li>
-          <%= image_tag book.img_url %>
-        </li>
+      <%= link_to "参考書を選択する",timeposts_books_path, class: "book_link" %>
+      <div class="book_box">
+        <% if @url != '/default_img.png' %>
+          <%= image_tag @url %> 
+        <% else%>
+          <p>参考書が選択されていません</p>
         <% end %>
-      </ul>
+        <%= f.hidden_field :img, :value => @url %>
+      </div>
+
       </div>
       <div class="timepost_form_each">
       <i class="far fa-calendar-alt fa-2x"></i>
-      <span>日時</span>
+      <span>日時(必須)</span>
       <div class="datetime_box">
         <%= raw sprintf(
               f.datetime_select(
