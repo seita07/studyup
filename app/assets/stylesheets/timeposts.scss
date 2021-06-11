@@ -94,6 +94,22 @@
 .timeline_content {
     padding: 4.61%;
     background-color: #fff5eb;
+    .timeline_header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 24px;
+        span {
+          a{
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #0BB783;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 14px;
+          }
+        }
+      }
 }
 .timeline_h1 {
     display: block;
@@ -108,6 +124,12 @@
     padding: 4.61% 8.46%;
     border-radius: 16px;
     border: 1px solid #dcdcdc;
+    h2{
+        text-align: center;
+        margin-bottom: 24px;
+        font-size: 32px;
+        font-weight: 600;
+    }
     ul {
         padding: 0;
         margin: 0;
@@ -115,23 +137,85 @@
         width: 100%;
     }
     li {
-        padding: 32px 4.61%;
-        border: 1px solid #dcdcdc;
+        padding: 32px 16px;
+        border-bottom: 1px solid #dcdcdc;
         .timepost_creat_time {
-            text-align: right;
+            // text-align: right;
             padding-right: 16px;
             margin-bottom: 4px;
             display: block;
+            margin-left: 32px;
+            color: #8f8f8f;
+            font-size: 14px;
         }
         .timeline_box {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            flex-wrap: wrap;
             .timeline_left {
-                width: 140px;
-                margin-right: 16px;
+                width: 100%;
                 display: flex;
                 align-items: baseline;
+                margin-bottom: 16px;
+                .edit_inner {
+                    position: relative;
+                    margin-left: auto;
+                    display: block;
+                    text-align: right;
+                    .click_button {
+                      text-decoration: none;
+                      // background-color: #eee5ff;
+                      padding: 8px 8px 12px 8px;
+                      border-radius: 8px;
+                      cursor: pointer;
+                      span{
+                        font-size: 4px;
+                        line-height: 0em;
+                        color: #20c997;
+                      }
+                      span:nth-of-type(1){
+                        margin-right: 4px;
+                        color: #28a745;
+                      }
+                    }
+                    .click_button:hover{
+                      background-color: #d7f9ef;
+                    }
+                  }
+                  .edit_list { 
+                    position: absolute;
+                    top: 36px;
+                    left: -100px;
+                    display: none;
+                    background-color: #ffffff;
+                    border: 1px solid #dcdcdc;
+                    border-radius: 8px;
+                    box-shadow:2px 2px 0px rgba(0,0,0,.1);
+                    font-size: 14px;
+                    width: 140px;
+                    box-sizing: border-box;
+                    p{
+                      margin: 0;
+                      text-align: center;
+                      box-sizing: border-box;
+                      padding-top:16px ;
+                      color: #333;
+                      a{
+                          font-size: 14px;
+                        text-decoration: none;
+                        padding:0  32px;
+                        color: #333;
+                        
+                      }
+                    }
+                    input{
+                      border: none;
+                      background-color: #ffffff;
+                      margin: 0 auto;
+                      text-align: center;
+                      display: block;
+                      padding:0  32px;
+                    }
+                  }
                 .timeline_user {
                     width: 50px;
                     height: 50px;
@@ -145,8 +229,8 @@
                 }
             }
             .right_container {
-                margin-top: 48px;
-                width: 100%;
+                margin-left: auto;
+                width: 90%;
                 .right_content {
                     display: block;
                     width: 100%;
@@ -204,5 +288,8 @@
                     align-items: center;
                 }
             }
+        }
+        li:last-child{
+            border: none;
         }
     }

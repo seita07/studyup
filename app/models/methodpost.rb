@@ -2,6 +2,7 @@ class Methodpost < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :method_likes, dependent: :destroy
+  has_many :methodliking_users, through: :method_likes, source: :user
 
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true

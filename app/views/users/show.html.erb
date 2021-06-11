@@ -13,8 +13,20 @@
           <p class="user_commentbox"><%= @user.comment %></p>
           <div class="user_info">
             <p>ユーザー名<span><%= @user.name %></span></p>
-            <p>職業<span><%= @user.occupation %></span></p>
-            <p>目標大学<span><%= @user.target_school %></span></p>
+            <p>職業<span>
+              <% if @user.occupation %>
+                <%= @user.occupation %>
+              <%else%>
+               未設定
+              <% end %>
+            </span></p>
+            <p>目標大学<span>
+              <% if @user.target_school %>
+                <%= @user.target_school %>
+              <%else%>
+               未設定
+              <% end %>
+            </span></p>
           </div>
       </div>
       <div class="user_detail_left_under">
@@ -37,6 +49,17 @@
       </div>
     </div>
     <div class="user_detail_right">
+    <div class="tab-area">
+      <div class="tab active">
+        <p>レポート</p>
+      </div>
+      <div class="tab">
+        <p>タイムライン</p>
+      </div>
+      <div class="tab">
+        <p>スタディメソッド</p>
+      </div>
+    </div>
     <div class="content-area">
       <div class="content show">
         <%= render "users/report" %>
@@ -51,14 +74,3 @@
     </div>
   </div>
 </div>
-<div class="tab-area">
-      <div class="tab active">
-        ユーザー詳細情報
-      </div>
-      <div class="tab">
-        タイムライン
-      </div>
-      <div class="tab">
-        勉強法
-      </div>
-    </div>

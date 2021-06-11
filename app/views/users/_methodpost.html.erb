@@ -1,16 +1,29 @@
+<div class="methodpost_content">
   <div class="methodpost_container">
-    <div class="methodpost_bar">
-      <p><i class="fas fa-user-graduate fa-3x"></i></p>
-    </div>
     <div class="methodpost_box">
+      <h2 id="methodpost_h2">投稿した勉強方法一覧</h2>
       <ul>
+        <% if @methodposts.empty?%>
+          <h3>検索結果はありませんでした</h3>
+        <% end %>
         <% @methodposts.each do |methodpost| %>
           <li>
+            <% if user_signed_in? %>
+            <%if current_user.id == methodpost.user.id %>
+            <div class="edit_box">
+            <span id="tab_span"><%= methodpost.subjects%></span>
+            <div class="edit_inner">
+            <a class="click_button"><span>⚫︎</span><span>⚫︎</span></a>
+            <div class="edit_list">
+              <p><%= link_to "投稿編集", "/methodposts/#{methodpost.id}/edit"%></p>
+              <p><%= button_to "投稿削除", "/methodposts/#{methodpost.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %></p>
+            </div>
+            </div>
+            </div>
+            <% end %>
+            <% end %>
           <h2><%= link_to "#{methodpost.title}", "/methodposts/#{methodpost.id}" %></h2>
             <div class="methodpost_reviewcontent">
-            <div class="tag_box">
-              <span><%= methodpost.subjects%></span>
-            </div>
               <div class="average-score">
                 <div class="star-rating">
                   <div class="star-rating-front" style="width: <%= methodpost.review_score_percentage %>%">★★★★★</div>
@@ -44,4 +57,80 @@
       </ul>
     </div>
   </div>
-<p><%= link_to "勉強法投稿新規作成", new_methodpost_path %></p>
+</div>
+
+<div class="methodpost_content good">
+  <div class="methodpost_container">
+    <div class="methodpost_box">
+      <h2 id="methodpost_h2">いいねした勉強法一覧</h2>
+      <ul>
+        <% if @goodposts.empty?%>
+          <h3>検索結果はありませんでした</h3>
+        <% end %>
+        <% @goodposts.each do |goodpost| %>
+          <li>
+            <% if user_signed_in? %>
+            <%if current_user.id == goodpost.user.id %>
+            <div class="edit_box">
+            <span id="tab_span"><%= goodpost.subjects%></span>
+            <div class="edit_inner">
+            <a class="click_button"><span>⚫︎</span><span>⚫︎</span></a>
+            <div class="edit_list">
+              <p><%= link_to "投稿編集", "/methodposts/#{goodpost.id}/edit"%></p>
+              <p><%= button_to "投稿削除", "/methodposts/#{goodpost.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %></p>
+            </div>
+            </div>
+            </div>
+            <% end %>
+            <% end %>
+          <h2><%= link_to "#{goodpost.title}", "/methodposts/#{goodpost.id}" %></h2>
+            <div class="methodpost_reviewcontent">
+              <div class="average-score">
+                <div class="star-rating">
+                  <div class="star-rating-front" style="width: <%= goodpost.review_score_percentage %>%">★★★★★</div>
+                  <div class="star-rating-back">★★★★★</div>
+                </div>
+                <div class="average-score-display">
+                  <p><%= goodpost.avg_score %>点（<%= goodpost.reviews.count %>件のレビュー）</p>
+                </div>
+              </div>
+              <div class="methodpost_likebox">
+                <%= render "methodlike/like_button" ,methodpost: goodpost%>
+              </div>
+            </div>
+            <div class="methodpost_uer_box">
+            <p>
+              <% if goodpost.user.image? %>
+                <%= link_to "/users/#{goodpost.user_id}" do %>
+                  <%= image_tag @user.image.url,class: "methodpost_user" %>
+                <% end %>
+              <% else %>
+                <%= link_to "/users/#{goodpost.user_id}" do %>
+                  <%= image_tag '/default.png' ,class:"methodpost_user"%>
+                <% end %>
+              <% end %>
+            <%= link_to "#{goodpost.user.name}", "/users/#{goodpost.user_id}" %>
+            </p>
+            <p class="created">作成日 <%= goodpost.created_at.strftime('%Y-%m-%d')%></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+$(document).on('click', function(e) {
+	// ２．クリックされた場所の判定
+	if(!$(e.target).closest('.edit_list').length && !$(e.target).closest('.click_button').length){
+		$('.edit_list').fadeOut();
+	}else if($(e.target).closest('.click_button').length){
+		// ３．ポップアップの表示状態の判定
+		if($('.edit_list').is(':hidden')){
+			$('.edit_list').fadeIn();
+		}else{
+			$('.edit_list').fadeOut();
+		}
+	}
+});
+</script>

@@ -1,10 +1,13 @@
 
 <div class="timeline_content">
+  <div class="timeline_header">
+    <span><%= link_to "勉強時間を記録", new_timepost_path %></span>
+  </div>
   <div class="timeline_container">
+  <h2>タイムライン</h2>
   <ul>
     <% @timeposts.each do |timepost| %>
       <li>
-      <span class="timepost_creat_time"><%= time_ago_in_words(timepost.created_at) %>前</span>
       <div class="timeline_box">
         <div class="timeline_left">
           <% if timepost.user.image? %>
@@ -17,6 +20,18 @@
             <% end %>
           <% end %>
           <p><%= timepost.user.name%></p>
+          <span class="timepost_creat_time"><%= time_ago_in_words(timepost.created_at) %>前</span>
+          <% if user_signed_in? %>
+            <%if current_user.id == timepost.user.id %>
+            <div class="edit_inner">
+              <a class="click_button"><span>⚫︎</span><span>⚫︎</span></a>
+              <div class="edit_list">
+                <p><%= link_to "投稿編集", "/timeposts/#{timepost.id}/edit"%></p>
+                <p><%= button_to "投稿削除", "/timeposts/#{timepost.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %></p>
+              </div>
+            </div>
+            <% end %>
+            <% end %>
         </div>
           <div class="right_container">
             <% if !timepost.content.empty? %>
@@ -54,5 +69,20 @@ $(function () {
     $('.comment_button').on('click', () => {
         $('.comment_list').fadeToggle('slow');
     });
+});
+</script>
+<script>
+$(document).on('click', function(e) {
+	// ２．クリックされた場所の判定
+	if(!$(e.target).closest('.edit_list').length && !$(e.target).closest('.click_button').length){
+		$('.edit_list').fadeOut();
+	}else if($(e.target).closest('.click_button').length){
+		// ３．ポップアップの表示状態の判定
+		if($('.edit_list').is(':hidden')){
+			$('.edit_list').fadeIn();
+		}else{
+			$('.edit_list').fadeOut();
+		}
+	}
 });
 </script>

@@ -116,6 +116,14 @@
           border: none;
           padding: 4.61%;
           border-radius: 8px;
+          h2{
+            font-size: 24px;
+          }
+          h3 {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 24px;
+          }
           li{
             padding: 12px;
             .timeline_user {
@@ -127,30 +135,47 @@
             }
             .right_container {
               margin-top: 0px;
+
             }
           }
         }
         .like {
           margin-top: 32px;
         }
+        .methodpost_content {
+          padding: 0;
+          background-color: none;
+          .methodpost_box{
+            border: none;
+          }
+        }
+        .good {
+          margin-top: 32px;
+        }
     }
   }
 }
 .tab-area {
-    // display: flex;
-    // justify-content: space-around;
-    background-color: #222e3e;
+    display: flex;
     cursor: pointer;
+    width: 50%;
+    margin-left: auto;
+    margin-bottom: 32px;
+    p {
+      padding: 0;
+      margin: 0;
+    }
     .tab {
       text-align: center;
-      color: white;
-      border-right: 1px solid #50637b;
-      border-left: 1px solid #222e3e;
+      // background-color: #ccc;
+      padding: 12px 24px;
     }
     .tab.active {
-      background-color: #ccc;
       color: #222e3e;
       border: none;
+      background-color: #222831;
+      border-radius: 8px 8px;
+      color: #ffffff;
     }
   }
 
@@ -169,6 +194,7 @@
     .follow_tab.follow_active {
       border: none;
       color: #181C32;
+      font-weight: 600;
     }
   }
   .content-area {

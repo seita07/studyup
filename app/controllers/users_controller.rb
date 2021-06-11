@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
-    def top
-        @users = User.all
-    end
-  
     def show
       @user = User.find_by(id: params[:id])
       @timeposts = Timepost.where(user_id: params[:id])
       @likeposts = @user.like_times
       @methodposts = Methodpost.where(user_id: params[:id])
+      @goodposts = @user.like_methods
       gon.day = get_day
       gon.study_time = get_eachsubject_weekly_totaltime
       @day_totaltime = dayly_total_studytime
