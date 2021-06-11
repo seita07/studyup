@@ -1,11 +1,28 @@
-<h2>参考書を決める</h2>
-<% @books.each do |book|%>
-    <p><%= book.title%></p>
-     <%= image_tag book.img_url %> 
-     
-    <%= form_tag(new_timepost_path,:method => 'get') do %>
-    <%= hidden_field_tag :url, book.img_url %>
-    <%= submit_tag '選択', :name => nil, class: "search_btn" %>
-    <% end %>
-<% end %>
-<p><%= link_to "参考書を登録する", books_path %></p>
+<div class="mybook_content">
+    <div class="mybook_content_head">
+    <%= link_to "参考書を登録する", books_path %>
+    </div>
+    <div class="mybook_container">
+        <h2>参考書選択</h2>
+        <% if @books.empty?%>
+            <h3>登録している参考書がありません<br>よく使う参考書を登録しましょう!!! </h3>
+        <% end %>
+        <ul>
+        <% @books.each do |book|%>
+            <li>
+                <%= image_tag book.img_url %> 
+                <div class="mybook_right">
+                    <p><%= book.title%></p>
+                    <div class="mybook_buttonbox">
+                    <%= form_tag(new_timepost_path,:method => 'get') do %>
+                    <%= hidden_field_tag :url, book.img_url %>
+                    <%= submit_tag '選択', :name => nil, class: "select_btn" %>
+                    <% end %>
+                    <%= button_to "登録削除", "/books/#{book.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %>
+                    </div>
+                </div>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+</div>

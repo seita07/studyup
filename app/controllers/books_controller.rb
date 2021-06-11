@@ -7,11 +7,20 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    # @book = Book.new(book_params)
     if @book.save
       redirect_to new_timepost_path
     else
       flash.now[:alert] = 'コメントを入力してください。'
+      redirect_to request.referer
+    end
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    if @book.destroy
+      redirect_to request.referer
+    else
+      flash.now[:alert] = 'コメント削除に失敗しました'
       redirect_to request.referer
     end
   end
