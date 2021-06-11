@@ -257,3 +257,99 @@
       display: block;
     }
   }
+
+  //基本情報編集ページ
+  .edit_content {
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 4.61% 10%;
+    background-color: #fbf5e7; 
+    color:#333; 
+    .edit_container {
+      background-color: #ffffff;
+        padding: 4.61% 8.46%;
+        border-radius: 16px;
+        box-shadow:15px 15px 0px rgba(0,0,0,.1);
+        border: 1px solid #dcdcdc;
+        h2 {
+          text-align: center;
+          margin-bottom: 24px;
+          font-size: 28px;
+          font-weight: 600;
+        }
+        .edit_img_box {
+          margin-top: 64px;
+          .icon_image {
+            display: block;
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            object-fit: cover;
+            margin: 0 auto;
+            margin-bottom: 24px;
+          }
+          button {
+            display: block;
+            margin: 0 auto;
+            padding: 16px 32px;
+            border-radius: 32px;
+            background-color: #ffffff;
+            border: 1px solid #7E8299;
+            font-size: 14px;
+            text-align: center;
+          }
+          button:focus {
+            outline: none;
+            background-color: none;
+          }
+        }
+        .field {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 32px;
+          padding: 0 14%;
+          label {
+            font-size: 18px;
+          }
+          input {
+            padding: 8px;
+            width: 300px;
+          }
+          .edit_comment {
+            width: 300px;
+            min-height:50px;
+          }
+          select {
+            width: 100px;
+            padding: 8px 16px;
+          }
+        }
+        .actions {
+          margin-top: 32px;
+          padding: 0 14%;
+          display: flex;
+          justify-content: flex-end;
+          flex-wrap: wrap;
+          p {
+            text-align: right;
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            input {
+              margin-top: 16px;
+              padding: 12px 24px;
+              border: none;
+              border-radius: 8px;
+              color: #ffffff;
+              background-color: #0BB783;
+            }
+          }
+          .deletebutton {
+            input {
+              background-color: #f14668; 
+            }
+          }
+        }
+    }
+  }

@@ -50,7 +50,7 @@
             <p>
               <% if methodpost.user.image? %>
                 <%= link_to "/users/#{methodpost.user_id}" do %>
-                  <%= image_tag @user.image.url,class: "methodpost_user" %>
+                  <%= image_tag methodpost.user.image.url,class: "methodpost_user" %>
                 <% end %>
               <% else %>
                 <%= link_to "/users/#{methodpost.user_id}" do %>

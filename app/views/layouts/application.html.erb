@@ -19,11 +19,7 @@
   </head>
   <body>
   <header>
-    <% if user_signed_in? %> 
-      <%= render "layouts/header_in" %>
-    <% else %>
-      <%= render "layouts/header_out" %>
-    <% end %>
+      <%= render "layouts/header" %>
   </header>
   <div class="container_box">
     <%= yield %>

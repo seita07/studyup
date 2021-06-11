@@ -91,22 +91,24 @@ header {
         }
      }
      .header_right {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        .dropdown {
-            margin-left: 16px;
-        }
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
         #button_ul{
             padding: 0;
             margin: 0;
             list-style-type: none;
             display: flex;
+            align-items: center;
+            justify-content: flex-end;
             font-size: 14px;
+            box-sizing: border-box;
             li {
                 margin-right: 16px;
+                padding: 0;
+                box-sizing: border-box;
                 a{
-                    background-color: #29bb89;
+                    box-sizing: border-box;
                     padding: 8px 24px;
                     border-radius: 8px;
 
@@ -114,10 +116,51 @@ header {
                 a:hover{
                     color: #ffffff;
                 }
-            }
-            li:nth-of-type(1){
-                a {
+                .post_my{
+                    background-color: #0BB783;
+                }
+                .post_edit{
+                    background-color: #3699FF;
+                }
+                .post_in {
                     background-color: #f14668;
+                }
+                .post_new {
+                    background-color: #0BB783; 
+                }
+                .button_to{
+                    margin: 0;
+                    padding: 0;
+                    input {
+                        background-color: #f14668;
+                        border: none;
+                        color: #ffffff;
+                        padding: 8px 24px; 
+                        border-radius: 8px;
+                        font-weight: 500;
+                    }
+                    input:hover {
+                        opacity:0.8;
+                        filter: alpha(opacity=70); 
+                    }
+                    
+                }
+            }
+            .post_my{
+                a {
+                    // background-color: #f14668;
+                    background-color: #29bb89;
+                }
+            }
+            .post_edit{
+                a {
+                    background-color: #3699FF;
+                }
+            }
+            .post_out{
+                input {
+                    background-color: #f14668;
+                    border: none;
                 }
                 
             }

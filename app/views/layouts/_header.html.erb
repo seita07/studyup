@@ -1,0 +1,19 @@
+<ul class="header_left">
+  <li id="logo">ALNFIEH</li>
+  <li><%= link_to "タイムライン", timeposts_path %></li>
+  <li><%= link_to "記録", new_timepost_path %></li>
+  <li><%= link_to "おすすめ勉強方法", methodposts_path %></li>
+</ul>
+<div class="header_right">
+  <ul id="button_ul">
+    <% if user_signed_in? %> 
+      <li><%= link_to "マイページ", "/users/#{current_user.id}",class:"post_my" %></li>
+      <li><%= link_to "基本情報編集", edit_user_registration_path,class:"post_edit" %></li>
+      <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete,class:"post_out" %> </li>
+    <% else%>
+      <li><%= link_to "ログイン", new_user_session_path, class: 'post_in' %></li>
+      <li><%= link_to "新規登録", new_user_registration_path, class: 'post_new' %></li>
+    <% end %>
+  </ul>
+  <%= image_tag '/default.png' ,class:"user_icon" %>
+</div>

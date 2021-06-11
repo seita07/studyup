@@ -3,6 +3,7 @@ class TimepostsController < ApplicationController
 
   def index
     @timeposts = Timepost.all.order(created_at: :desc)
+    # @timeposts = Timepost.search(params[:search])
   end
 
   def new
