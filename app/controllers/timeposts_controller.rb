@@ -18,7 +18,7 @@ class TimepostsController < ApplicationController
     @timepost = current_user.timeposts.build(timepost_params)
     @timepost.total_time = @timepost.time * 60 + @timepost.minitus
     if @timepost.save
-      flash[:notice] = "#{@timepost.total_time}分がんばりました"
+      flash[:notice] = "投稿しました!"
       redirect_to timeposts_path
     else
       flash[:alert] = '記録できませんでした'

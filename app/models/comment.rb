@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   
     validates :user_id, presence: true
     validates :timepost_id, presence: true
-    validates :text, presence: true, length: { maximum: 100 }
+    validates :text, presence: true, length: { minimum:1,maximum: 100 }
   
     def user
       User.find_by(id: user_id)
