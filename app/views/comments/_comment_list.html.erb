@@ -12,8 +12,13 @@
               <%= image_tag '/default.png' ,class:"comment_user"%>
             <% end %>
           <% end %>
-          <p><%= timepost.user.name%></p>
+          <p><%= link_to "#{comment.user.name}", "/users/#{comment.user_id}" %></p>
           <span><%= time_ago_in_words(comment.created_at) %>前</span>
+          <% if user_signed_in? %>
+            <%if current_user.id == comment.user.id %>
+            <%= button_to "削除", "/timeposts/#{timepost.id}/comments/#{comment.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %>
+          <% end %>
+          <% end %>
       </div>
       <div class="comment_content">
          <p><%= comment.text %></p>
@@ -22,4 +27,3 @@
     <% end %>
      <%= render "comments/comment_form" ,timepost: timepost%>
 </div>
-

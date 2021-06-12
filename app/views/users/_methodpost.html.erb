@@ -4,7 +4,7 @@
       <h2 id="methodpost_h2">投稿した勉強方法一覧</h2>
       <ul>
         <% if @methodposts.empty?%>
-          <h3>検索結果はありませんでした</h3>
+          <h3>投稿した記事がありません</h3>
         <% end %>
         <% @methodposts.each do |methodpost| %>
           <li>
@@ -65,7 +65,7 @@
       <h2 id="methodpost_h2">いいねした勉強法一覧</h2>
       <ul>
         <% if @goodposts.empty?%>
-          <h3>検索結果はありませんでした</h3>
+          <h3>いいねした記事がありません</h3>
         <% end %>
         <% @goodposts.each do |goodpost| %>
           <li>

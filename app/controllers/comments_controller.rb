@@ -25,5 +25,4 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:text).merge(user_id: current_user.id, timepost_id: params[:timepost_id])
     end
-  end
-  
+end

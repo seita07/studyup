@@ -19,7 +19,7 @@ class MethodpostsController < ApplicationController
       @methodpost = current_user.methodposts.build(methodpost_params)
       if @methodpost.save
         flash[:success] = 'methodpost created!'
-        redirect_to request.referer
+        redirect_to methodposts_path
       else
         render 'new'
       end
@@ -32,7 +32,7 @@ class MethodpostsController < ApplicationController
     def update
       @methodpost = Methodpost.find(params[:id])
       if @methodpost.update(methodpost_params)
-        redirect_to request.referer
+        redirect_to methodposts_path
       else
         render 'edit'
       end

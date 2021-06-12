@@ -19,7 +19,7 @@ class TimepostsController < ApplicationController
     @timepost.total_time = @timepost.time * 60 + @timepost.minitus
     if @timepost.save
       flash[:notice] = "#{@timepost.total_time}分がんばりました"
-      redirect_to request.referer
+      redirect_to timeposts_path
     else
       flash[:alert] = '記録できませんでした'
       render 'new'
@@ -28,12 +28,13 @@ class TimepostsController < ApplicationController
 
   def edit
     @timepost = Timepost.find_by(id: params[:id])
+    @url = @timepost.img
   end
 
   def update
     @timepost = Timepost.find(params[:id])
     if @timepost.update(timepost_params)
-      redirect_to request.referer
+      redirect_to timeposts_path
     else
       render 'edit'
     end

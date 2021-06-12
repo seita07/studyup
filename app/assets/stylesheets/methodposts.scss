@@ -18,7 +18,8 @@
         justify-content: space-between;
         .methodbar_left {
           a{
-            background-color: #1BC5BD;
+            // background-color: #1BC5BD;
+            background-color: #0BB783;
             border: none;
             color: #ffffff;
             padding: 12px 24px;
@@ -256,7 +257,7 @@
             }
             input {
               border: none;
-              background-color: #0BB783;
+              background-color: #f14668; 
               // #0BB783 28a745
               color: #ffffff;
               padding: 8px 16px;
@@ -455,6 +456,10 @@
         align-items: center;
         span {
           margin-left: 8px;
+        }
+        a {
+          text-decoration: none;
+          color: #333;
         }
       }
       .review_user {

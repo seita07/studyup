@@ -18,7 +18,7 @@
               <%= image_tag '/default.png' ,class:"timeline_user"%>
             <% end %>
           <% end %>
-          <p><%= timepost.user.name%></p>
+          <p><%= link_to "#{timepost.user.name}", "/users/#{timepost.user_id}" %></p>
           <span class="timepost_creat_time"><%= time_ago_in_words(timepost.created_at) %>前</span>
           <% if user_signed_in? %>
             <%if current_user.id == timepost.user.id %>
