@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2021_06_08_111257) do
 
-  create_table "books", force: :cascade do |t|
-    t.integer "user_id"
+  create_table "books", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "title"
     t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 2021_06_08_111257) do
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "timepost_id"
+  create_table "comments", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "timepost_id"
     t.text "text", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -31,17 +31,17 @@ ActiveRecord::Schema.define(version: 2021_06_08_111257) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "method_likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "methodpost_id"
+  create_table "method_likes", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "methodpost_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["methodpost_id"], name: "index_method_likes_on_methodpost_id"
     t.index ["user_id"], name: "index_method_likes_on_user_id"
   end
 
-  create_table "methodposts", force: :cascade do |t|
-    t.integer "user_id"
+  create_table "methodposts", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
     t.text "content"
     t.text "title"
     t.string "subjects"
@@ -50,9 +50,9 @@ ActiveRecord::Schema.define(version: 2021_06_08_111257) do
     t.index ["user_id"], name: "index_methodposts_on_user_id"
   end
 
-  create_table "relationships", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "follow_id"
+  create_table "relationships", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "follow_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["follow_id"], name: "index_relationships_on_follow_id"
@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 2021_06_08_111257) do
     t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "methodpost_id"
+  create_table "reviews", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "methodpost_id"
     t.text "text", null: false
     t.float "evaluation", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -71,16 +71,16 @@ ActiveRecord::Schema.define(version: 2021_06_08_111257) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "time_likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "timepost_id"
+  create_table "time_likes", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "timepost_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["timepost_id"], name: "index_time_likes_on_timepost_id"
     t.index ["user_id"], name: "index_time_likes_on_user_id"
   end
 
-  create_table "timeposts", force: :cascade do |t|
+  create_table "timeposts", charset: "utf8mb4", force: :cascade do |t|
     t.integer "user_id"
     t.text "content"
     t.integer "time"
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_111257) do
     t.index ["user_id", "created_at"], name: "index_timeposts_on_user_id_and_created_at"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
