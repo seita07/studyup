@@ -3,11 +3,7 @@ version: 2.1
 jobs:
   test:
     docker:
-<<<<<<< HEAD
       - image: circleci/ruby:2.7.3-node-browsers-legacy
-=======
-      - image: circleci/ruby:2.6.3
->>>>>>> origin/master
     working_directory: ~/repo
     steps:
       - checkout
