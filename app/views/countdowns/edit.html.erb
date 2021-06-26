@@ -1,0 +1,23 @@
+<div class="timepost_content">
+  <div class="timepost_container">
+  <h2 id="target_h2">モチベーションアップ</h2>
+  <p id="target_h2_p">カウントダウン機能、１週間の勉強時間の目標設定、この2つの機能を十分に使い<br>自身ののモチベーションアップにつなげましょう!!<br>
+  </p>
+    <%= form_with(model: @countdown, local: true) do |f| %>
+     <h3 class="target_h3">カウントダウン</h3>
+     <p class="target_h3_p">【機能詳細】大事なイベントまでの日数をカウントダウンします<br>
+     イベントまでの日数を毎日確認することでモチベーション維持につなげましょう!!</p>
+     <div class="target_box">
+     <h4>イベント内容</h4>
+     <%= f.text_field :omment , :placeholder => "例）○○大学2次試験" %>
+     </div>
+     <div class="target_box">
+     <h4>イベントの日付</h4>
+     <div>
+     	<%= raw sprintf(f.date_select(:event_day, prompt:"--",use_month_numbers:true,start_year:2021, date_separator:'%s'),'年','月')+'日'%>
+     </div>
+     </div>
+      <%= f.submit "作成", class: "study_submit" %>
+    <% end %>
+</div>
+</div>

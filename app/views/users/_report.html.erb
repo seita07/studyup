@@ -1,4 +1,23 @@
 <div class="report_content">
+<% if @user.studytime %>
+<table class="studyweekly_table">
+    <tr>
+      <th>1週間の目標勉強時間</th>
+    </tr>
+    <tr>
+      <td>
+      <div class="studybox">
+      <span class="studyblock_span">目標<span class="study_mokuhyou"><%= @user.studytime.studytime%></span>時間</span>
+      <span>現在<span class="minus_time"><%= @weekly_totaltime %></span>時間</span>
+      </div>
+      
+      </td>
+    </tr> 
+</table>
+<% elsif @user == current_user%>
+    <span id="weeklybtn_span"><%= link_to "1週間の目標勉強時間を設定", new_studytime_path %></span>
+<% else %>
+<% end %>
 <table>
     <tr>
       <th>今日</th>
@@ -13,7 +32,7 @@
 </table>
 <p>
 <canvas id="myChart" class="myChart_pc" width="400" height="200">お使いのブラウザはcanvasに対応していません。</canvas>
-<canvas id="myChart" class="myChart_sp"  width="800" height="800">お使いのブラウザはcanvasに対応していません。</canvas>
+<canvas id="myChart" class="myChart_sp"  width="200" height="100">お使いのブラウザはcanvasに対応していません。</canvas>
 </p>
 <p>
 <canvas id="myPieChart"></canvas>

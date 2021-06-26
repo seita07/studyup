@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :like_methods, through: :method_likes, source: :methodpost
   has_many :reviews, dependent: :destroy
   has_many :books, dependent: :destroy
+  has_one :countdown
+  has_one :studytime
   
   has_many :relationships
   has_many :followings, through: :relationships, source: :follow

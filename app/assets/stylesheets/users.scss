@@ -108,6 +108,64 @@
               border-left: 1px solid #222831;
             }
           }
+          .studyweekly_table {
+            width: 100%;
+            text-align: center;
+            border: 1px solid #222831;
+            border-radius: 8px;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #222831;
+            margin-bottom: 44px;
+            th:nth-child(1){
+              border-radius: 8px 8px 0px 0px;
+              border-right: none;
+              padding: 12px;
+              letter-spacing: 3px;
+              font-size: 17px;
+           }
+            td:nth-child(1){
+              border-radius: 0px 0px 8px 8px;
+              border-right: none;
+              font-weight: 500;
+              letter-spacing: 3px;
+              padding: 16px;
+            }
+            .studybox {
+              display: flex;
+              justify-content: space-around;
+              width: 60%;
+              margin:  0 auto;
+            }
+            .minus_time{
+              font-size: 24px;
+              font-weight: 600;
+              margin-left: 12px;
+              margin-right: 4px;
+            }
+            .study_mokuhyou {
+              font-size: 24px;
+              font-weight: 600;
+              margin-left: 12px;
+              margin-right: 4px;
+            }
+          } 
+        }
+        #weeklybtn_span {
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 16px;
+          a {
+            background-color: #3699FF;
+            text-decoration: none;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 24px;
+            box-sizing: border-box;
+            letter-spacing: 2px;
+            font-size: 15px;
+          }
         }
         .timeline_container {
           border: none;

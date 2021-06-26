@@ -19,4 +19,6 @@ Rails.application.routes.draw do
     resources :methodlike, only: %i[create destroy]
   end
   resources :relationships, only: %i[create destroy]
+  resources :countdowns
+  resources :studytimes
 end

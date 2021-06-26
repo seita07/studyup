@@ -3,6 +3,7 @@ class TimepostsController < ApplicationController
 
   def index
     @timeposts = Timepost.all.order(created_at: :desc)
+    @posts = Timepost.group(:user_id).order('count_user_id DESC').count(:user_id)
   end
 
   def new

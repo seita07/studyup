@@ -1,0 +1,629 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  line-height: 1;
+}
+
+.cl {
+  clear: both;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=70);
+}
+
+.message {
+  padding: 0 4.61%;
+  margin-top: 16px;
+}
+
+.container_box {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+header {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #222831;
+  color: aliceblue;
+  font-weight: 500;
+  padding: 16px 4.61%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.2em;
+}
+
+header a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+header .user_icon {
+  width: 48px;
+}
+
+header .header_left {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+header .header_left li {
+  font-size: 14px;
+}
+
+header .header_left li a {
+  color: #C0C0C0;
+  padding: 8px;
+}
+
+header .header_left li a:hover {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+header .header_left #logo {
+  font-size: 32px;
+  margin-right: 64px;
+}
+
+header .header_right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header .header_right #button_ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+header .header_right #button_ul li {
+  margin-right: 16px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header .header_right #button_ul li a {
+  box-sizing: border-box;
+  padding: 10px 24px;
+  border-radius: 8px;
+}
+
+header .header_right #button_ul li a:hover {
+  color: #ffffff;
+}
+
+header .header_right #button_ul li .post_my {
+  background-color: #0BB783;
+}
+
+header .header_right #button_ul li .post_edit {
+  background-color: #3699FF;
+}
+
+header .header_right #button_ul li .post_in {
+  background-color: #f14668;
+}
+
+header .header_right #button_ul li .post_new {
+  background-color: #0BB783;
+}
+
+header .header_right #button_ul li .button_to {
+  margin: 0;
+  padding: 0;
+}
+
+header .header_right #button_ul li .button_to input {
+  background-color: #f14668;
+  border: none;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+header .header_right #button_ul li .button_to input:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=70);
+}
+
+header .header_right #button_ul .post_my a {
+  background-color: #29bb89;
+}
+
+header .header_right #button_ul .post_edit a {
+  background-color: #3699FF;
+}
+
+header .header_right #button_ul .post_out input {
+  background-color: #f14668;
+  border: none;
+}
+
+.target_content {
+  text-align: center;
+  padding: 16px;
+  font-size: 15px;
+}
+
+.target_content span {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.target_content #countdown {
+  margin-right: 32px;
+}
+
+footer {
+  text-align: center;
+}
+
+footer p {
+  background-color: black;
+  font-size: 8px;
+  color: #ffffff;
+  padding: 8px;
+  margin: 0;
+}
+
+.like_button {
+  background-color: #ffffff;
+  border: none;
+}
+
+.like_button:focus {
+  outline: 0;
+}
+
+.unlike_button {
+  background-color: #ffffff;
+  border: none;
+}
+
+.unlike_button:focus {
+  outline: 0;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+}
+
+.like-btn {
+  color: #8f8f8f;
+}
+
+.good_button {
+  background-color: #ffffff;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.good_button:focus {
+  outline: 0;
+}
+
+.ungood_button {
+  background-color: #ffffff;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.ungood_button:focus {
+  outline: 0;
+}
+
+.ungood-btn {
+  color: #0707ff;
+}
+
+.good-btn {
+  color: #8f8f8f;
+}
+
+.sign_content {
+  padding: 4.61% 16%;
+  background-color: #ffe8e8;
+}
+
+.sign_content .sign_container {
+  background-color: #ffffff;
+  padding: 8.46% 8.46%;
+  border-radius: 16px;
+  box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.sign_content .sign_container h2 {
+  text-align: center;
+  margin-bottom: 6.15%;
+}
+
+.sign_content .sign_container .sign_ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.sign_content .sign_container .sign_ul li {
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.sign_content .sign_container .sign_ul li input {
+  background: #f5f5f5;
+  border: #dfdfdf 1px solid;
+  border-radius: 8px;
+  width: 100%;
+  padding: 16px;
+}
+
+.sign_content .sign_container .sign_ul li input:focus {
+  outline: none;
+}
+
+.sign_content .sign_container .sign_submit {
+  background-color: #fb9300;
+  border: none;
+  color: #ffffff;
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  padding: 16px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 0px #b56a01;
+  font-weight: 400;
+}
+
+.sign_content .sign_container .sign_submit:focus {
+  outline: none;
+}
+
+.sign_content .sign_container .login_submit {
+  background-color: #f14668;
+  border: none;
+  color: #ffffff;
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  padding: 16px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 0px #c1524e;
+  font-weight: 400;
+}
+
+.sign_content .sign_container .login_submit:focus {
+  outline: none;
+}
+
+.sign_content .sign_container .login_guest {
+  margin-top: 16px;
+  background-color: #29bb89;
+  border: none;
+  color: #ffffff;
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  padding: 16px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 0px #2ba37b;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.sign_content .sign_container .remember_box {
+  margin-bottom: 16px;
+}
+
+.sign_content .sign_container .remember_box .check_box_text {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 640px) {
+  header {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #222831;
+    color: aliceblue;
+    font-weight: 500;
+    padding: 16px 4.61%;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.2em;
+    text-align: center;
+  }
+  header a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+  header .user_icon {
+    width: 48px;
+  }
+  header .header_left {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: none;
+    align-items: center;
+    list-style-type: none;
+  }
+  header .header_left li {
+    font-size: 14px;
+  }
+  header .header_left li a {
+    color: #C0C0C0;
+    padding: 8px;
+  }
+  header .header_left li a:hover {
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    color: #ffffff;
+    font-weight: 600;
+  }
+  header .header_left #logo {
+    font-size: 24px;
+    margin-right: 0px;
+  }
+  header .sp {
+    display: block;
+  }
+  header .header_right {
+    display: block;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  header .header_right #button_ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  header .header_right #button_ul li {
+    margin-right: 16px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  header .header_right #button_ul li a {
+    box-sizing: border-box;
+    padding: 10px 24px;
+    border-radius: 8px;
+  }
+  header .header_right #button_ul li a:hover {
+    color: #ffffff;
+  }
+  header .header_right #button_ul li .post_my {
+    background-color: #0BB783;
+  }
+  header .header_right #button_ul li .post_edit {
+    background-color: #3699FF;
+  }
+  header .header_right #button_ul li .post_in {
+    background-color: #f14668;
+  }
+  header .header_right #button_ul li .post_new {
+    background-color: #0BB783;
+  }
+  header .header_right #button_ul li .button_to {
+    margin: 0;
+    padding: 0;
+  }
+  header .header_right #button_ul li .button_to input {
+    background-color: #f14668;
+    border: none;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+  header .header_right #button_ul li .button_to input:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=70);
+  }
+  header .header_right #button_ul .post_my a {
+    background-color: #29bb89;
+  }
+  header .header_right #button_ul .post_edit a {
+    background-color: #3699FF;
+  }
+  header .header_right #button_ul .post_out input {
+    background-color: #f14668;
+    border: none;
+  }
+  footer {
+    text-align: center;
+  }
+  footer p {
+    background-color: black;
+    font-size: 8px;
+    color: #ffffff;
+    padding: 8px;
+    margin: 0;
+  }
+  .like_button {
+    background-color: #ffffff;
+    border: none;
+  }
+  .like_button:focus {
+    outline: 0;
+  }
+  .unlike_button {
+    background-color: #ffffff;
+    border: none;
+  }
+  .unlike_button:focus {
+    outline: 0;
+  }
+  .like-btn-unlike {
+    color: #ff2581;
+  }
+  .like-btn {
+    color: #8f8f8f;
+  }
+  .good_button {
+    background-color: #ffffff;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .good_button:focus {
+    outline: 0;
+  }
+  .ungood_button {
+    background-color: #ffffff;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .ungood_button:focus {
+    outline: 0;
+  }
+  .ungood-btn {
+    color: #0707ff;
+  }
+  .good-btn {
+    color: #8f8f8f;
+  }
+  .sign_content {
+    padding: 4.61% 16%;
+    background-color: #ffe8e8;
+  }
+  .sign_content .sign_container {
+    background-color: #ffffff;
+    padding: 8.46% 8.46%;
+    border-radius: 16px;
+    box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.1);
+  }
+  .sign_content .sign_container h2 {
+    text-align: center;
+    margin-bottom: 6.15%;
+  }
+  .sign_content .sign_container .sign_ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  .sign_content .sign_container .sign_ul li {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .sign_content .sign_container .sign_ul li input {
+    background: #f5f5f5;
+    border: #dfdfdf 1px solid;
+    border-radius: 8px;
+    width: 100%;
+    padding: 16px;
+  }
+  .sign_content .sign_container .sign_ul li input:focus {
+    outline: none;
+  }
+  .sign_content .sign_container .sign_submit {
+    background-color: #fb9300;
+    border: none;
+    color: #ffffff;
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    padding: 16px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 0px #b56a01;
+    font-weight: 400;
+  }
+  .sign_content .sign_container .sign_submit:focus {
+    outline: none;
+  }
+  .sign_content .sign_container .login_submit {
+    background-color: #f14668;
+    border: none;
+    color: #ffffff;
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    padding: 16px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 0px #c1524e;
+    font-weight: 400;
+  }
+  .sign_content .sign_container .login_submit:focus {
+    outline: none;
+  }
+  .sign_content .sign_container .login_guest {
+    margin-top: 16px;
+    background-color: #29bb89;
+    border: none;
+    color: #ffffff;
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    padding: 16px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 0px #2ba37b;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+  }
+  .sign_content .sign_container .remember_box {
+    margin-bottom: 16px;
+  }
+  .sign_content .sign_container .remember_box .check_box_text {
+    font-size: 14px;
+  }
+}

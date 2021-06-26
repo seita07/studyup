@@ -8,6 +8,9 @@ class UsersController < ApplicationController
       gon.day = get_day
       gon.study_time = get_eachsubject_weekly_totaltime
       @day_totaltime = dayly_total_studytime
+      if @user.studytime
+        @weekly_totaltime = weekly_total_studytime(@user)
+      end
       @month_totaltime = month_total_studytime
       @totaltime = total_studytime
     end
@@ -72,6 +75,16 @@ class UsersController < ApplicationController
       return hour,minitues
     end
 
+    def weekly_total_studytime(user)
+      week_totaltime_list = []
+      start = user.studytime.updated_at
+      to = start + 7.day
+      studytime_posts = Timepost.where(datetime: start...to).where(user_id: params[:id])
+      studytime_posts.each do |post|
+        week_totaltime_list.push(post.total_time)
+      end
+      return week_totaltime_list.sum/60
+    end
   
     def month_total_studytime
       month_totaltime_list = []
