@@ -11,8 +11,16 @@
 
 .studytime_content {
   display: flex;
-  padding: 0 10%;
   justify-content: space-between;
   align-items: center;
   margin-top: 64px;
+}
+
+.studytime_content h4 {
+  letter-spacing: 2px;
+}
+
+.countdown_icon {
+  color: #ffc93c;
+  margin-right: 16px;
 }

@@ -1,0 +1,887 @@
+.timepost_content {
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 4.61% 16%;
+  background-color: #fff5eb;
+}
+
+.timepost_content .timepost_container {
+  background-color: #ffffff;
+  padding: 8.46% 8.46%;
+  border-radius: 16px;
+  box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dcdcdc;
+}
+
+.timepost_content .timepost_form_each {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 32px 0;
+}
+
+.timepost_content .timepost_form_each .book_box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.timepost_content .timepost_form_each .book_box img {
+  max-width: 150px;
+  max-height: 150px;
+  margin-left: auto;
+  display: block;
+  margin-top: 16px;
+}
+
+.timepost_content .timepost_form_each .book_box p {
+  margin-top: 24px;
+  font-weight: 600;
+}
+
+.timepost_content .timepost_form_each .book_link {
+  text-decoration: none;
+  margin-left: auto;
+  font-weight: 600;
+}
+
+.timepost_content .timepost_form_each i {
+  margin-right: 16px;
+}
+
+.timepost_content .timepost_form_each span {
+  font-size: 22px;
+  font-weight: 600;
+  margin-right: 30%;
+}
+
+.timepost_content .timepost_form_each #timepost_subjects {
+  margin-left: auto;
+  padding: 8px;
+}
+
+.timepost_content .timepost_form_each .datetime_box {
+  margin-left: auto;
+}
+
+.timepost_content .timepost_form_each .datetime_box select {
+  padding: 8px;
+}
+
+.timepost_content .timepost_form_each .studytime_box {
+  margin-left: auto;
+}
+
+.timepost_content .timepost_form_each .studytime_box select {
+  padding: 8px;
+  margin-right: 8px;
+  margin-left: 4px;
+}
+
+.timepost_content .timepost_form_each .timepost_textarea {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  min-height: 200px;
+  padding: 16px;
+  font-size: 20px;
+}
+
+.timepost_content .timepost_form_each select {
+  font-size: 18px;
+}
+
+.timepost_content .timepost_form_each .book_list {
+  display: block;
+  width: 100%;
+  list-style-type: none;
+  margin-top: 24px;
+  padding: 0;
+  margin: 16px 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.timepost_content .timepost_form_each .book_list li {
+  margin-bottom: 16px;
+  width: 10%;
+  margin: 0 2%;
+}
+
+.timepost_content .timepost_form_each .book_list li img {
+  width: 100%;
+}
+
+.timepost_content .study_submit {
+  display: block;
+  margin-left: auto;
+  background-color: #29bb89;
+  color: #ffffff;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.timepost_content .study_submit:focus {
+  outline: 0;
+}
+
+.timeline_content {
+  padding: 4.61%;
+  background-color: #fff5eb;
+}
+
+.timeline_content .timeline_header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.timeline_content .timeline_header span a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #0BB783;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+}
+
+.timeline_h1 {
+  display: block;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #000000;
+}
+
+.timeline_container {
+  background-color: #ffffff;
+  padding: 4.61% 8.46%;
+  border-radius: 16px;
+  border: 1px solid #dcdcdc;
+}
+
+.timeline_container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.timeline_container ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+}
+
+.timeline_container li {
+  padding: 32px 16px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.timeline_container li .timepost_creat_time {
+  padding-right: 16px;
+  margin-bottom: 4px;
+  display: block;
+  margin-left: 32px;
+  color: #8f8f8f;
+  font-size: 14px;
+}
+
+.timeline_container li .timeline_box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.timeline_container li .timeline_box .timeline_left {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 16px;
+  padding-left: 5%;
+}
+
+.timeline_container li .timeline_box .timeline_left .edit_inner {
+  position: relative;
+  margin-left: auto;
+  display: block;
+  text-align: right;
+}
+
+.timeline_container li .timeline_box .timeline_left .edit_inner .click_button {
+  text-decoration: none;
+  padding: 8px 8px 12px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.timeline_container li .timeline_box .timeline_left .edit_inner .click_button span {
+  font-size: 4px;
+  line-height: 0em;
+  color: #20c997;
+}
+
+.timeline_container li .timeline_box .timeline_left .edit_inner .click_button span:nth-of-type(1) {
+  margin-right: 4px;
+  color: #28a745;
+}
+
+.timeline_container li .timeline_box .timeline_left .edit_inner .click_button:hover {
+  background-color: #d7f9ef;
+}
+
+.timeline_container li .timeline_box .timeline_left .edit_list {
+  position: absolute;
+  top: 36px;
+  left: -100px;
+  display: none;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  width: 140px;
+  box-sizing: border-box;
+}
+
+.timeline_container li .timeline_box .timeline_left .edit_list p {
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 16px;
+  color: #333;
+}
+
+.timeline_container li .timeline_box .timeline_left .edit_list p a {
+  font-size: 14px;
+  text-decoration: none;
+  padding: 0  32px;
+  color: #333;
+}
+
+.timeline_container li .timeline_box .timeline_left .edit_list input {
+  border: none;
+  background-color: #ffffff;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  padding: 0  32px;
+}
+
+.timeline_container li .timeline_box .timeline_left .timeline_user {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.timeline_container li .timeline_box .timeline_left p {
+  margin-left: 16px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.timeline_container li .timeline_box .timeline_left p a {
+  text-decoration: none;
+  color: #333;
+}
+
+.timeline_container li .timeline_box .right_container {
+  margin-left: auto;
+  width: 80%;
+}
+
+.timeline_container li .timeline_box .right_container .right_content {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: #ecf8fa;
+  margin-bottom: 24px;
+}
+
+.timeline_container li .timeline_box .right_container .timeline_right {
+  display: block;
+  width: 100%;
+  border: #dcdcdc solid 1px;
+  border-radius: 16px;
+  padding: 2.61% 10%;
+  display: flex;
+  align-items: center;
+}
+
+.timeline_container li .timeline_box .right_container .timeline_right .timeline_img {
+  margin: 0 10% 0 0;
+}
+
+.timeline_container li .timeline_box .right_container .timeline_right .timeline_img img {
+  max-width: 130px;
+  max-height: 100px;
+  box-sizing: border-box;
+}
+
+.timeline_container li .timeline_box .right_container .timeline_right p {
+  margin: 0 8% 0 0;
+  padding: 0;
+}
+
+.timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) {
+  letter-spacing: 0.05em;
+}
+
+.timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) .fa-history {
+  color: #ffc93c;
+  margin-right: 8px;
+}
+
+.timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) .fa-book-open {
+  color: #ffc2b4;
+  margin-right: 16px;
+}
+
+.timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) small {
+  color: #8f8f8f;
+}
+
+.timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) span {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) strong {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.timeline_container li .timeline_box .timeline_like_comment {
+  margin-top: 16px;
+  margin-right: 16px;
+  display: block;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.timeline_container li:last-child {
+  border: none;
+}
+
+.mybook_content {
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 4.61% 8.46%;
+  background-color: #fff5eb;
+}
+
+.mybook_content .mybook_content_head {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-right: 4px;
+}
+
+.mybook_content .mybook_content_head a {
+  text-decoration: none;
+  margin-left: 8px;
+  background-color: #29bb89;
+  border: none;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.mybook_content .mybook_container {
+  background-color: #ffffff;
+  padding: 8.46% 32px;
+  border-radius: 16px;
+  box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dcdcdc;
+}
+
+.mybook_content .mybook_container h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 64px;
+}
+
+.mybook_content .mybook_container h3 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
+.mybook_content .mybook_container ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mybook_content .mybook_container ul li {
+  width: 50%;
+  padding: 24px;
+  display: flex;
+}
+
+.mybook_content .mybook_container ul li img {
+  margin-right: 16px;
+}
+
+.mybook_content .mybook_container ul li .mybook_right {
+  font-size: 16px;
+  padding-right: 32px;
+  width: 100%;
+}
+
+.mybook_content .mybook_container ul li .mybook_right p {
+  line-height: 1.5em;
+}
+
+.mybook_content .mybook_container ul li .mybook_right .mybook_buttonbox {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.mybook_content .mybook_container ul li .mybook_right input {
+  font-size: 12px;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-right: 16px;
+}
+
+.mybook_content .mybook_container ul li .mybook_right .select_btn {
+  background-color: #1BC5BD;
+}
+
+.mybook_content .mybook_container ul li .mybook_right input {
+  background-color: #F64E60;
+}
+
+@media screen and (max-width: 640px) {
+  .timepost_content {
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 10% 4.61%;
+    background-color: #fff5eb;
+  }
+  .timepost_content .timepost_container {
+    background-color: #ffffff;
+    padding: 8.46% 8.46%;
+    border-radius: 16px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dcdcdc;
+  }
+  .timepost_content .timepost_form_each {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 8px 0;
+  }
+  .timepost_content .timepost_form_each .book_box {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .timepost_content .timepost_form_each .book_box img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-left: auto;
+    display: block;
+    margin-top: 8px;
+  }
+  .timepost_content .timepost_form_each .book_box p {
+    margin-top: 16px;
+    font-weight: 600;
+  }
+  .timepost_content .timepost_form_each .book_link {
+    text-decoration: none;
+    margin-left: auto;
+    font-weight: 600;
+  }
+  .timepost_content .timepost_form_each i {
+    margin-right: 8px;
+    display: none;
+  }
+  .timepost_content .timepost_form_each span {
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 0%;
+  }
+  .timepost_content .timepost_form_each #timepost_subjects {
+    margin-left: auto;
+    padding: 2px;
+  }
+  .timepost_content .timepost_form_each .datetime_box {
+    margin-left: auto;
+  }
+  .timepost_content .timepost_form_each .datetime_box select {
+    padding: 2px;
+    margin-top: 8px;
+    margin-right: 8px;
+  }
+  .timepost_content .timepost_form_each .studytime_box {
+    margin-left: auto;
+  }
+  .timepost_content .timepost_form_each .studytime_box select {
+    padding: 2px;
+    margin-right: 8px;
+    margin-left: 4px;
+  }
+  .timepost_content .timepost_form_each .timepost_textarea {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    min-height: 100px;
+    padding: 16px;
+    font-size: 15px;
+  }
+  .timepost_content .timepost_form_each select {
+    font-size: 15px;
+  }
+  .timepost_content .timepost_form_each .book_list {
+    display: block;
+    width: 100%;
+    list-style-type: none;
+    margin-top: 24px;
+    padding: 0;
+    margin: 16px 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .timepost_content .timepost_form_each .book_list li {
+    margin-bottom: 16px;
+    width: 10%;
+    margin: 0 2%;
+  }
+  .timepost_content .timepost_form_each .book_list li img {
+    width: 100%;
+  }
+  .timepost_content .study_submit {
+    display: block;
+    margin-left: auto;
+    background-color: #29bb89;
+    color: #ffffff;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .timepost_content .study_submit:focus {
+    outline: 0;
+  }
+  .timeline_content {
+    padding: 8.46% 4.61%;
+    background-color: #fff5eb;
+  }
+  .timeline_content .timeline_header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .timeline_content .timeline_header span a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0BB783;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+  }
+  .timeline_h1 {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #000000;
+  }
+  .timeline_container {
+    background-color: #ffffff;
+    padding: 8.46%;
+    border-radius: 16px;
+    border: 1px solid #dcdcdc;
+  }
+  .timeline_container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .timeline_container ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+  }
+  .timeline_container li {
+    padding: 16px 0px;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  .timeline_container li .timepost_creat_time {
+    padding-right: 16px;
+    margin-bottom: 4px;
+    display: block;
+    margin-left: 32px;
+    color: #8f8f8f;
+    font-size: 12px;
+  }
+  .timeline_container li .timeline_box {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .timeline_container li .timeline_box .timeline_left {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 4px;
+    padding-left: 0%;
+  }
+  .timeline_container li .timeline_box .timeline_left .edit_inner {
+    position: relative;
+    margin-left: auto;
+    display: block;
+    text-align: right;
+  }
+  .timeline_container li .timeline_box .timeline_left .edit_inner .click_button {
+    text-decoration: none;
+    padding: 8px 8px 12px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .timeline_container li .timeline_box .timeline_left .edit_inner .click_button span {
+    font-size: 4px;
+    line-height: 0em;
+    color: #20c997;
+  }
+  .timeline_container li .timeline_box .timeline_left .edit_inner .click_button span:nth-of-type(1) {
+    margin-right: 4px;
+    color: #28a745;
+  }
+  .timeline_container li .timeline_box .timeline_left .edit_inner .click_button:hover {
+    background-color: #d7f9ef;
+  }
+  .timeline_container li .timeline_box .timeline_left .edit_list {
+    position: absolute;
+    top: 36px;
+    left: -100px;
+    display: none;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    width: 140px;
+    box-sizing: border-box;
+  }
+  .timeline_container li .timeline_box .timeline_left .edit_list p {
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 16px;
+    color: #333;
+  }
+  .timeline_container li .timeline_box .timeline_left .edit_list p a {
+    font-size: 14px;
+    text-decoration: none;
+    padding: 0  32px;
+    color: #333;
+  }
+  .timeline_container li .timeline_box .timeline_left .edit_list input {
+    border: none;
+    background-color: #ffffff;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    padding: 0  32px;
+  }
+  .timeline_container li .timeline_box .timeline_left .timeline_user {
+    width: 28px;
+    height: 28px;
+    border-radius: 100px;
+    object-fit: cover;
+  }
+  .timeline_container li .timeline_box .timeline_left p {
+    margin-left: 16px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .timeline_container li .timeline_box .timeline_left p a {
+    text-decoration: none;
+    color: #333;
+  }
+  .timeline_container li .timeline_box .right_container {
+    margin-left: auto;
+    width: 100%;
+  }
+  .timeline_container li .timeline_box .right_container .right_content {
+    display: block;
+    width: 100%;
+    border-radius: 16px;
+    padding: 16px;
+    background-color: #ecf8fa;
+    margin-bottom: 8px;
+  }
+  .timeline_container li .timeline_box .right_container .timeline_right {
+    width: 100%;
+    border: #dcdcdc solid 1px;
+    border-radius: 16px;
+    padding: 4.61% 4.61%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .timeline_container li .timeline_box .right_container .timeline_right .timeline_img {
+    margin: 0 4% 0 0;
+  }
+  .timeline_container li .timeline_box .right_container .timeline_right .timeline_img img {
+    max-width: 30px;
+    max-height: 30px;
+    box-sizing: border-box;
+  }
+  .timeline_container li .timeline_box .right_container .timeline_right p {
+    margin: 0 12px 0 0;
+    padding: 0;
+  }
+  .timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) {
+    letter-spacing: 0.05em;
+  }
+  .timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) .fa-history {
+    color: #ffc93c;
+    margin-right: 4px;
+  }
+  .timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) .fa-book-open {
+    color: #ffc2b4;
+    margin-right: 4px;
+  }
+  .timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) small {
+    color: #8f8f8f;
+  }
+  .timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) span {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .timeline_container li .timeline_box .right_container .timeline_right p:nth-child(n+1) strong {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .timeline_container li .timeline_box .timeline_like_comment {
+    margin-top: 8px;
+    margin-right: 0px;
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .timeline_container li:last-child {
+    border: none;
+  }
+  .mybook_content {
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 10% 4.61%;
+    background-color: #fff5eb;
+  }
+  .mybook_content .mybook_content_head {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-right: 4px;
+  }
+  .mybook_content .mybook_content_head a {
+    text-decoration: none;
+    margin-left: 8px;
+    background-color: #29bb89;
+    border: none;
+    color: #ffffff;
+    padding: 12px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+  .mybook_content .mybook_container {
+    background-color: #ffffff;
+    padding: 8.46% 24px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dcdcdc;
+  }
+  .mybook_content .mybook_container h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .mybook_content .mybook_container h3 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+  }
+  .mybook_content .mybook_container ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .mybook_content .mybook_container ul li {
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    padding: 8px 0;
+  }
+  .mybook_content .mybook_container ul li img {
+    margin-right: 12px;
+  }
+  .mybook_content .mybook_container ul li .mybook_right {
+    font-size: 16px;
+    padding-right: 12px;
+    width: 100%;
+  }
+  .mybook_content .mybook_container ul li .mybook_right p {
+    line-height: 1.5em;
+  }
+  .mybook_content .mybook_container ul li .mybook_right .mybook_buttonbox {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+  .mybook_content .mybook_container ul li .mybook_right input {
+    font-size: 12px;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin-right: 8px;
+  }
+  .mybook_content .mybook_container ul li .mybook_right .select_btn {
+    background-color: #1BC5BD;
+  }
+  .mybook_content .mybook_container ul li .mybook_right input {
+    background-color: #F64E60;
+  }
+}

@@ -184,7 +184,17 @@ header {
         font-size: 16px;
     }
     #countdown {
-        margin-right: 32px;
+        margin-right: 16px;
+    }
+    a {
+        text-decoration: none;
+        text-align: center;
+        color: #ffffff;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 13px;
+        background-color: #3699FF;
+        box-sizing: border-box;
     }
  }
 //フッター
