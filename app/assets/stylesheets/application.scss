@@ -53,6 +53,18 @@ a:hover {
 .container_box {
     font-family: 'Noto Sans JP', sans-serif;
 }
+#error_explanation {
+    margin-bottom: 64px;
+    h2{
+        font-size: 24px;
+        line-height: 1.5em;
+        color: #f14668;
+        margin-bottom: 16px;
+    }
+    ul {
+        padding-left: 112px;
+    }
+}
 //header
 header {
     font-family: 'Noto Sans JP', sans-serif;

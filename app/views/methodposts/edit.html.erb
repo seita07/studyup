@@ -1,6 +1,13 @@
 <div class="methodpost_new_content">
   <div class="methodpost_new_container">
    <%= form_with(model: @methodpost, local: true) do |f| %>
+   <% if @methodpost.errors.any? %>
+    <ul>
+      <% @methodpost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+   <% end %>
    <div class="form_box flex">
       <h3><%= f.label :科目 %></h3>
       <%= f.select :subjects, [["国語","国語"],["現代文", "現代文"], ["古文", "古文"], ["漢文", "漢文"],

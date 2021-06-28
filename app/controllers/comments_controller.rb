@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
       if @comment.save
         redirect_to request.referer
       else
+        @error_comment = @comment
         flash.now[:alert] = 'コメントを入力してください。'
         redirect_to request.referer
       end

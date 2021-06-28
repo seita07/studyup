@@ -42,11 +42,6 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include 'パスワード（確認用）とパスワードの入力が一致しません'
       end
-      it 'job_idが空では登録できない' do
-        @user.job_id = ''
-        @user.valid?
-        expect(@user.errors.full_messages).to include '職業、状況を選択してください'
-      end
       it '重複したemailが存在する場合登録できない' do
         @user.save
         another_user = FactoryBot.build(:user)
@@ -55,20 +50,15 @@ RSpec.describe User, type: :model do
         expect(another_user.errors.full_messages).to include('Eメールはすでに存在します')
       end
       it 'メールアドレスは、@を含まないと登録できない' do
-        @user.email = 'testtest.com'
+        @user.email = 'exampleexample.com'
         @user.valid?
         expect(@user.errors.full_messages).to include 'Eメールは不正な値です'
       end
       it 'passwordが5文字以下では登録できない' do
-        @user.password = '00000'
-        @user.password_confirmation = '00000'
+        @user.password = '12345'
+        @user.password_confirmation = '12345'
         @user.valid?
         expect(@user.errors.full_messages).to include('パスワードは6文字以上で入力してください')
-      end
-      it 'job_idは1以外でないと保存できない' do
-        @user.job_id = 1
-        @user.valid?
-        expect(@user.errors.full_messages).to include '職業、状況を選択してください'
       end
     end
   end
