@@ -21,9 +21,11 @@
       <%= render "layouts/header" %>
   </header>
   <% flash.each do |key, value| %>
-      <p class="alert alert-<%= key %> message_p">
-        <%= value %>
-      </p>
+    <% if key == "success"%>
+      <p class="message_p success"><%= value %></p>
+    <% else %>
+      <p class="message_p danger"> <%= value %></p>
+    <% end %>
   <% end %>
   
     <% if user_signed_in? %>
@@ -36,8 +38,6 @@
           <% else %>
           <span>イベントは終了しました。</span>
           <% end %>
-          <%= link_to "変更", "/countdowns/#{current_user.countdown.id}/edit" %>
-      
       <% end%>
     </div>
     <% end%>

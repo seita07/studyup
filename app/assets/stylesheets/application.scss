@@ -66,8 +66,15 @@ a:hover {
     }
 }
 .message_p {
-    padding: 0;
+    padding: 16px;
+    margin: 0;
     text-align: center;
+    background-color: #d0ede4;
+    color: #065037;
+}
+.danger {
+    background-color: #e6bab8;
+    color: #881028;
 }
 //header
 header {
