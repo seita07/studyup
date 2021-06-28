@@ -18,9 +18,10 @@ class MethodpostsController < ApplicationController
     def create   
       @methodpost = current_user.methodposts.build(methodpost_params)
       if @methodpost.save
-        flash[:success] = 'methodpost created!'
+        flash[:success] = '投稿しました！'
         redirect_to methodposts_path
       else
+        flash.now[:danger] = '投稿に失敗しました'
         render 'new'
       end
     end
@@ -32,8 +33,10 @@ class MethodpostsController < ApplicationController
     def update
       @methodpost = Methodpost.find(params[:id])
       if @methodpost.update(methodpost_params)
+        flash[:success] = '変更しました！'
         redirect_to methodposts_path
       else
+        flash.now[:danger] = '変更に失敗しました'
         render 'edit'
       end
     end
@@ -41,7 +44,7 @@ class MethodpostsController < ApplicationController
     def destroy
       Methodpost.find_by(id: params[:id]).destroy
       flash[:success] = '投稿を削除しました'
-      redirect_to request.referer
+      redirect_to methodposts_path
     end
   
     private

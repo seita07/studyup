@@ -8,9 +8,10 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
+      flash[:success] = '参考書を登録しました！'
       redirect_to new_timepost_path
     else
-      flash.now[:alert] = 'コメントを入力してください。'
+      flash.now[:danger] = '参考書を登録できませんでした'
       redirect_to request.referer
     end
   end
@@ -18,9 +19,10 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     if @book.destroy
+      flash[:success] = '登録していた参考書を削除しました！'
       redirect_to request.referer
     else
-      flash.now[:alert] = 'コメント削除に失敗しました'
+      flash.now[:danger] = '登録削除できませんでした'
       redirect_to request.referer
     end
   end

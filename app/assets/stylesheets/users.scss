@@ -18,6 +18,26 @@
           background-color: #ffffff;
           padding: 32px 24px;
           border-radius: 8px;
+          .follow_btn {
+            display: block;
+            margin-left: auto;
+            background-color: #2978b5;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 500;
+            width: 100%;
+          }
+          .follow_btn:focus {
+            outline: none;
+          }
+          .unfollow {
+            background-color: #ffffff;
+            color: #2978b5;
+            border: 1px solid #2978b5;
+          }
           .user_image {
             width: 75px;
             height: 75px;

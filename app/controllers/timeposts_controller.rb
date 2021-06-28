@@ -18,10 +18,10 @@ class TimepostsController < ApplicationController
     @timepost = current_user.timeposts.build(timepost_params)
     @timepost.total_time = @timepost.time * 60 + @timepost.minitus
     if @timepost.save
-      flash[:notice] = "投稿しました!"
+      flash[:success] = "投稿しました!"
       redirect_to timeposts_path
     else
-      flash[:alert] = '記録できませんでした'
+      flash.now[:danger] = '記録できませんでした'
       render 'new'
     end
   end
@@ -34,8 +34,10 @@ class TimepostsController < ApplicationController
   def update
     @timepost = Timepost.find(params[:id])
     if @timepost.update(timepost_params)
+      flash[:success] = "変更しました!"
       redirect_to timeposts_path
     else
+      flash.now[:danger] = '変更できませんでした'
       render 'edit'
     end
   end

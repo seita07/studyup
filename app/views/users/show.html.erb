@@ -10,6 +10,9 @@
           <%@following_users = @user.followings%> 
           <%@follower_users = @user.followers%>
           <p class="user_follow_box"><%= @following_users.count %>フォロー　<%= @follower_users.count %>フォロワー</p>
+          <% if user_signed_in? %>
+            <%= render "relationships/follow_button", user: @user %>
+          <% end %>
           <p class="user_commentbox"><%= @user.comment %></p>
           <div class="user_info">
             <p>ユーザー名<span><%= @user.name %></span></p>

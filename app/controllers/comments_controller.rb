@@ -3,10 +3,11 @@ class CommentsController < ApplicationController
     def create
       @comment = Comment.new(comment_params)
       if @comment.save
+        flash[:success] = 'コメントしました。'
         redirect_to request.referer
       else
         @error_comment = @comment
-        flash.now[:alert] = 'コメントを入力してください。'
+        flash[:danger] = 'コメントに失敗しました。'
         redirect_to request.referer
       end
     end
@@ -14,9 +15,10 @@ class CommentsController < ApplicationController
     def destroy
       @comment = Comment.find(params[:id])
       if @comment.destroy
+        flash[:success] = 'コメントを削除しました。'
         redirect_to request.referer
       else
-        flash.now[:alert] = 'コメント削除に失敗しました'
+        flash[:danger] = 'コメント削除に失敗しました'
         redirect_to request.referer
       end
     end

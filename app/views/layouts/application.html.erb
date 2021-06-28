@@ -20,22 +20,27 @@
   <header>
       <%= render "layouts/header" %>
   </header>
-
-
-  <% if user_signed_in? %>
-    <% if current_user.countdown%>
+  <% flash.each do |key, value| %>
+      <p class="alert alert-<%= key %> message_p">
+        <%= value %>
+      </p>
+  <% end %>
+  
+    <% if user_signed_in? %>
     <div class="target_content">
-      <% if post_days > 0 %>
-      <span id="countdown">カウントダウン!!</span><%= current_user.countdown.omment%>まで あと<span><%= post_days%></span>日!!
-      <% elsif post_days == 0 %>
-      <span>イベント当日です！!　頑張ってください！！</span>
-      <% else %>
-      <span>イベントは終了しました。</span>
-      <% end %>
-      <%= link_to "変更", "/countdowns/#{current_user.countdown.id}/edit" %>
+      <% if current_user.countdown %>
+          <% if post_days > 0 %>
+          <span id="countdown">カウントダウン!!</span><%= current_user.countdown.omment%>まで あと<span><%= post_days%></span>日!!
+          <% elsif post_days == 0 %>
+          <span>イベント当日です！!  頑張ってください！！</span>
+          <% else %>
+          <span>イベントは終了しました。</span>
+          <% end %>
+          <%= link_to "変更", "/countdowns/#{current_user.countdown.id}/edit" %>
+      
+      <% end%>
     </div>
     <% end%>
-   <% end%>
   
   <div class="container_box">
     <%= yield %>

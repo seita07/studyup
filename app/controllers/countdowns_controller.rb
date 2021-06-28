@@ -8,10 +8,10 @@ class CountdownsController < ApplicationController
   def create
     @countdown = Countdown.new(countdown_params)
     if @countdown.save
-      flash[:notice] = "投稿しました!"
+      flash[:success] = "カウントダウンを開始しました!"
       redirect_to timeposts_path
     else
-      flash[:alert] = '記録できませんでした'
+      flash[:danger] = '作成できませんでした'
       render 'new'
     end
   end
@@ -23,8 +23,10 @@ class CountdownsController < ApplicationController
   def update
     @countdown = Countdown.find_by(user_id: current_user.id)
     if @countdown.update(countdown_params)
+      flash[:success] = "カウントダウンを変更しました!"
       redirect_to timeposts_path
     else
+      flash.now[:danger] = '作成できませんでした'
       render 'edit'
     end
   end
