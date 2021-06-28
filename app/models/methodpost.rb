@@ -12,25 +12,28 @@ class Methodpost < ApplicationRecord
 
   def self.search(search)
     if search
-      Methodpost.where(['title LIKE ?', "%#{search}%"]).or(Methodpost.where(['subjects LIKE ?', "%#{search}%"])).or(Methodpost.where(['content LIKE ?', "%#{search}%"]))
+      Methodpost.where(['title LIKE ?',
+                        "%#{search}%"]).or(Methodpost.where(['subjects LIKE ?',
+                                                             "%#{search}%"])).or(Methodpost.where(['content LIKE ?',
+                                                                                                   "%#{search}%"]))
     else
       Methodpost.all
     end
   end
 
   def avg_score
-    unless self.reviews.empty?
-      reviews.average(:evaluation).round(1).to_f
-    else
+    if reviews.empty?
       0.0
+    else
+      reviews.average(:evaluation).round(1).to_f
     end
   end
 
   def review_score_percentage
-    unless self.reviews.empty?
-      reviews.average(:evaluation).round(1).to_f*100/5
-    else
+    if reviews.empty?
       0.0
+    else
+      reviews.average(:evaluation).round(1).to_f * 100 / 5
     end
   end
 end

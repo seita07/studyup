@@ -1,8 +1,6 @@
 class BooksController < ApplicationController
   def index
-    if params[:keyword]
-      @books = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword])
-    end
+    @books = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword]) if params[:keyword]
   end
 
   def create
@@ -20,16 +18,15 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     if @book.destroy
       flash[:success] = '登録していた参考書を削除しました！'
-      redirect_to request.referer
     else
       flash.now[:danger] = '登録削除できませんでした'
-      redirect_to request.referer
     end
+    redirect_to request.referer
   end
 
   private
 
   def book_params
-    params.require(:book).permit(:img_url,:title,:user_id)
+    params.require(:book).permit(:img_url, :title, :user_id)
   end
 end

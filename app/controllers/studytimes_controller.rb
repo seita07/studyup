@@ -8,7 +8,7 @@ class StudytimesController < ApplicationController
   def create
     @studytime = Studytime.new(studytime_params)
     if @studytime.save
-      flash[:success] = "目標勉強時間を設定しました!"
+      flash[:success] = '目標勉強時間を設定しました!'
       redirect_to timeposts_path
     else
       flash.now[:danger] = '設定できませんでした'
@@ -23,7 +23,7 @@ class StudytimesController < ApplicationController
   def update
     @studytime = Studytime.find_by(user_id: current_user.id)
     if @studytime.update(studytime_params)
-      flash[:success] = "目標勉強時間を変更しました!"
+      flash[:success] = '目標勉強時間を変更しました!'
       redirect_to timeposts_path
     else
       flash.now[:danger] = '変更できませんでした'
@@ -32,13 +32,14 @@ class StudytimesController < ApplicationController
   end
 
   def destroy
-	Studytime.find_by(user_id: current_user.id).destroy
+    Studytime.find_by(user_id: current_user.id).destroy
     flash[:success] = '削除しました'
-    redirect_to timeposts_path 
+    redirect_to timeposts_path
   end
-  
+
   private
+
   def studytime_params
     params.require(:studytime).permit(:studytime).merge(user_id: current_user.id)
-  end   
+  end
 end

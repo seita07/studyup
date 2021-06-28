@@ -8,7 +8,7 @@ class CountdownsController < ApplicationController
   def create
     @countdown = Countdown.new(countdown_params)
     if @countdown.save
-      flash[:success] = "カウントダウンを開始しました!"
+      flash[:success] = 'カウントダウンを開始しました!'
       redirect_to timeposts_path
     else
       flash[:danger] = '作成できませんでした'
@@ -23,7 +23,7 @@ class CountdownsController < ApplicationController
   def update
     @countdown = Countdown.find_by(user_id: current_user.id)
     if @countdown.update(countdown_params)
-      flash[:success] = "カウントダウンを変更しました!"
+      flash[:success] = 'カウントダウンを変更しました!'
       redirect_to timeposts_path
     else
       flash.now[:danger] = '作成できませんでした'
@@ -36,9 +36,10 @@ class CountdownsController < ApplicationController
     flash[:success] = 'カウントダウンを終了しました'
     redirect_to timeposts_path
   end
-  
+
   private
+
   def countdown_params
     params.require(:countdown).permit(:omment, :event_day).merge(user_id: current_user.id)
-  end   
+  end
 end

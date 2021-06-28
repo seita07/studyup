@@ -29,8 +29,9 @@
   <% end %>
   
     <% if user_signed_in? %>
-    <div class="target_content">
+    
       <% if current_user.countdown %>
+      <div class="target_content">
           <% if post_days > 0 %>
           <span id="countdown">カウントダウン!!</span><%= current_user.countdown.omment%>まで あと<span><%= post_days%></span>日!!
           <% elsif post_days == 0 %>
@@ -38,8 +39,9 @@
           <% else %>
           <span>イベントは終了しました。</span>
           <% end %>
+      </div>
       <% end%>
-    </div>
+    
     <% end%>
   
   <div class="container_box">
