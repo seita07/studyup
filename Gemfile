@@ -33,6 +33,7 @@ group :development, :test do
   # gem 'sqlite3', '1.4.1'
   gem 'rubocop', require: false
   gem 'rspec-rails', '~> 3.6'
+  gem 'factory_bot_rails'
 end
 
 group :development do
