@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :method_likes do
+  factory :book do
     
   end
 end

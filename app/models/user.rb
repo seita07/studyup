@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :timeposts, dependent: :destroy
   has_many :time_likes, dependent: :destroy
   has_many :like_times, through: :time_likes, source: :timepost
+  has_many :comments, dependent: :destroy
 
   has_many :methodposts, dependent: :destroy
   has_many :method_likes, dependent: :destroy

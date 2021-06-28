@@ -10,6 +10,9 @@ ja:
       methodpost:
         title: タイトル
         content: 内容
+      countdown:
+        omment: イベント内容
+        event_day: イベントの日付
   date:
     abbr_day_names:
     - 日

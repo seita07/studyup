@@ -31,8 +31,8 @@ class CountdownsController < ApplicationController
 
   def destroy
     Countdown.find_by(user_id: current_user.id).destroy
-    flash[:success] = '投稿を削除しました'
-    redirect_to request.referer
+    flash[:success] = 'カウントダウンを終了しました'
+    redirect_to timeposts_path
   end
   
   private

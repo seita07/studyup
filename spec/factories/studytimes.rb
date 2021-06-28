@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :method_likes do
+  factory :studytime do
     
   end
 end

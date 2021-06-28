@@ -1,10 +1,16 @@
 <div class="timepost_content">
   <div class="timepost_container">
-  <h2 id="countdown_h2"><i class="far fa-calendar-alt weekly_icon"></i>カウントダウン</h2>
-  <p id="countdown_h2_p">あああああああああああああああああああああ<br>自身ののモチベーションアップにつなげましょう!!<br>
-  ああああああああああああああああああああああああああ
+  <h2 id="countdown_h2"><i class="far fa-calendar-alt weekly_icon"></i>カウントダウン（変更）</h2>
+  <p id="countdown_h2_p">大事なイベントまでの日数を表示してくれる機能です<br>受験日やテストの日付などを設定し、日々残りの日数を確認することで長期的なモチベーション維持につなげましょう！！
   </p>
     <%= form_with(model: @countdown, local: true) do |f| %>
+    <% if @countdown.errors.any? %>
+      <ul class="error_ul">
+        <% @countdown.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
      <div class="countdown_box">
      <h4>イベント内容</h4>
      <%= f.text_field :omment , :placeholder => "例）○○大学2次試験" %>
@@ -15,7 +21,8 @@
      	<%= raw sprintf(f.date_select(:event_day, prompt:"--",use_month_numbers:true,start_year:2021, date_separator:'%s'),'年','月')+'日'%>
      </div>
      </div>
-      <%= f.submit "作成", class: "study_submit" %>
+      <%= f.submit "変更", class: "study_submit" %>
     <% end %>
+    <%= button_to "削除", "/countdowns/#{current_user.countdown.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %>
 </div>
 </div>

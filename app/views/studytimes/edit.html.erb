@@ -1,6 +1,6 @@
 <div class="timepost_content">
   <div class="timepost_container">
-  <h2 id="countdown_h2"><i class="fas fa-history countdown_icon"></i>ウィークリーファイト</h2>
+  <h2 id="countdown_h2"><i class="fas fa-history countdown_icon"></i>ウィークリーファイト(変更)</h2>
   <p id="countdown_h2_p">１週間の目標勉強時間を設定できる機能です<br>目標と現在時点の勉強時間を比較することで、カウントダウン機能とはまた違った短期的なモチベーションアップにつながります
   <p id="countdown_h2_p2">※１週間の目標勉強時間と現在の勉強時間は<%= link_to "マイページ", "/users/#{current_user.id}"%>から確認できます<br>
   ※目標勉強時間の変更も<%= link_to "マイページ", "/users/#{current_user.id}" %>の変更ボタンから可能です</p>
@@ -19,7 +19,8 @@
                               [60,60]] %>時間
      </div>
      </div>
-      <%= f.submit "作成", class: "study_submit" %>
+      <%= f.submit "変更", class: "study_submit" %>
     <% end %>
+    <%= button_to "削除", "/studytimes/#{current_user.studytime.id}", method: :delete,data: { confirm: "本当に削除しますか?" } %>
 </div>
 </div>

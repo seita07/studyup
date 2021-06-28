@@ -4,6 +4,13 @@
   <p id="countdown_h2_p">大事なイベントまでの日数を表示してくれる機能です<br>受験日やテストの日付などを設定し、日々残りの日数を確認することで長期的なモチベーション維持につなげましょう！！
   </p>
     <%= form_with(model: @countdown, local: true) do |f| %>
+    <% if @countdown.errors.any? %>
+    <ul class="error_ul">
+      <% @countdown.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+   <% end %>
      <div class="countdown_box">
      <h4>イベント内容</h4>
      <%= f.text_field :omment , :placeholder => "例）○○大学2次試験" %>

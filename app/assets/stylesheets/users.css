@@ -126,6 +126,10 @@
   font-size: 15px;
 }
 
+.user_content .user_container .user_detail_left .another_option_box .another_link_red {
+  background-color: #f14668;
+}
+
 .user_content .user_container .user_detail_right {
   width: 68%;
 }

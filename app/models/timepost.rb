@@ -1,6 +1,7 @@
 class Timepost < ApplicationRecord
   belongs_to :user
   has_many :time_likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :timeliking_users, through: :time_likes, source: :user
 
   default_scope -> { order(created_at: :desc) }
