@@ -59,7 +59,7 @@
       <% if @user.countdown.nil? %>
        <%= link_to "使ってみる", new_countdown_path %>
       <% else %>
-       <%= link_to "既に使用しています", edit_countdown_path ,class:"another_link_red"%>
+       <%= link_to "変更や削除はここから", edit_countdown_path ,class:"another_link_red"%>
       <% end %>
       <h4><i class="far fa-calendar-alt weekly_icon"></i>ウィークリーファイト</h4>
       <p>大事なイベントまでの日数を表示してくれる機能です<br>
@@ -67,7 +67,7 @@
       <% if @user.studytime.nil? %>
        <%= link_to "使ってみる", new_studytime_path %>
       <% else %>
-       <%= link_to "既に使用しています", edit_studytime_path ,class:"another_link_red"%>
+       <%= link_to "変更や削除はここから", edit_studytime_path ,class:"another_link_red"%>
       <% end %>
       <h4><i class="fas fa-history countdown_icon"></i>参考書登録機能</h4>
       <p>よく使う参考書を登録できる機能です。<br>
