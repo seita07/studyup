@@ -21,7 +21,7 @@ class MethodpostsController < ApplicationController
       flash[:success] = '投稿しました！'
       redirect_to methodposts_path
     else
-      flash.now[:danger] = '投稿に失敗しました'
+      flash.now[:danger] = '投稿に失敗しました!'
       render 'new'
     end
   end
