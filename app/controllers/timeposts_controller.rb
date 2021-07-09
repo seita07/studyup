@@ -7,18 +7,15 @@ class TimepostsController < ApplicationController
 
   def new
     @timepost = Timepost.new
-    if params[:url]
-      @url = params[:url]
-    else 
-      @url = '/default_img.png'
-    end
+    return @url = params[:url] if params[:url]
+    return @url = '/default_img.png' unless params[:url]
   end
 
   def create
     @timepost = current_user.timeposts.build(timepost_params)
     @timepost.total_time = @timepost.time * 60 + @timepost.minitus
     if @timepost.save
-      flash[:notice] = "投稿しました!"
+      flash[:notice] = '投稿しました!'
       redirect_to timeposts_path
     else
       flash[:alert] = '記録できませんでした'
@@ -46,13 +43,13 @@ class TimepostsController < ApplicationController
     redirect_to request.referer
   end
 
-  def book 
+  def book
     @books = current_user.books
   end
 
   def search_rakuten_api
-    items = RakutenWebService::Ichiba::Item.search(keyword: "英語")
-    return @items = items
+    items = RakutenWebService::Ichiba::Item.search(keyword: '英語')
+    @items = items
   end
 
   private
