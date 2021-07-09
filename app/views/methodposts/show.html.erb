@@ -31,9 +31,7 @@
     <%@following_users = @methodpost.user.followings%> 
     <%@follower_users = @methodpost.user.followers%>
     <p class="user_follow_p"><%= @following_users.count %>フォロー　<%= @follower_users.count %>フォロワー</p>
-    <% if user_signed_in? %>
-            <%= render "relationships/follow_button", user: @methodpost.user %>
-    <% end %>
+    <p><%= render "relationships/follow_button", user: @methodpost.user %></p>
     <h3>投稿情報</h3>
     <ul>
       <li>グッド数(<%= @methodlikes_count %>)</li>
