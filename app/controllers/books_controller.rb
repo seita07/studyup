@@ -19,7 +19,7 @@ class BooksController < ApplicationController
     if @book.destroy
       flash[:success] = '登録していた参考書を削除しました！'
     else
-      flash.now[:danger] = '登録削除できませんでした'
+      flash.now[:danger] = '登録の削除ができませんでした'
     end
     redirect_to request.referer
   end
