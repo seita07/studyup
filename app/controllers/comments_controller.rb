@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
       flash[:success] = 'コメントしました。'
     else
       @error_comment = @comment
-      flash[:danger] = 'コメントに失敗しました。'
+      flash[:danger] = 'コメントに失敗しました'
     end
     redirect_to request.referer
   end
