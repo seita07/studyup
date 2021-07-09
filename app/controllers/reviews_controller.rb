@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     if @review.save
-      flash[:success] = 'レビューを作成しました'
+      flash[:success] = 'レビューを作成しました!'
     else
       flash[:danger] = 'レビュー作成に失敗しました'
     end
@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     if @review.destroy
-      flash[:success] = 'レビューを削除しました'
+      flash[:success] = 'レビューを削除しました!'
     else
       flash.now[:danger] = 'レビュー削除に失敗しました'
     end
