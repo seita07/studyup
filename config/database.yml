@@ -15,6 +15,7 @@ default: &default
   password: <%= ENV['MYSQL_PASSWORD'] || '' %>
   socket: /tmp/mysql.sock
   host: <%= ENV['MYSQL_HOST'] || 'localhost' %>
+
 development:
   <<: *default
   database: studyup_development
@@ -24,3 +25,8 @@ production:
   database: studyup_production
   username: studyup
   password: <%= ENV['STUDYUP_DATABASE_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: studyup_test
+  host: <%= ENV.fetch("APP_DATABASE_HOST") { 'db' } %>
