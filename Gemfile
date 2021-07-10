@@ -5,6 +5,7 @@ ruby '2.7.3'
 
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 gem 'mysql2', '~> 0.5'
+gem 'unicorn', '5.6'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
@@ -50,6 +51,3 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-group :production do
-  gem 'unicorn', '5.6'
-end
